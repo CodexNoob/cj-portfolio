@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>HelpDesk Ticketing System - Project | Charles John Duot</title>
+    <meta name="description"
+        content="HelpDesk Ticketing System project details: a React and Supabase support ticketing app with role-based dashboards, ticket queues, comments, attachments, and admin approvals." />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/devicon.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div class="bg-anim" aria-hidden="true">
+        <span class="blob b1"></span>
+        <span class="blob b2"></span>
+        <span class="blob b3"></span>
+        <span class="blob b4"></span>
+    </div>
+    <div class="bg-tech" aria-hidden="true"></div>
+
+    <header class="site-header">
+        <div class="container nav">
+            <a class="logo" href="../index.html">C<span>J</span></a>
+            <button class="nav-toggle" type="button" aria-label="Toggle menu" aria-expanded="false">
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+            <nav class="nav-menu" aria-label="Primary">
+                <a href="../index.html#about" target="_self">About</a>
+                <a href="../index.html#skills" target="_self">Skills & Tools</a>
+                <a href="../index.html#projects" target="_self">Projects</a>
+                <a href="../index.html#experience" target="_self">Experience</a>
+                <a href="../index.html#education" target="_self">Education & Certifications</a>
+                <a href="../index.html#contact" target="_self">Contact</a>
+                <button class="theme-toggle" aria-label="Switch to light mode" title="Switch to light mode"
+                    type="button">
+                    <i class="fas fa-sun" aria-hidden="true"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main">
+        <section class="section project-hero">
+            <div class="container grid-2 reveal-on-scroll">
+                <div class="project-copy">
+                    <a href="../index.html#projects" class="btn project-back"
+                        aria-label="Back to projects">&larr; Projects</a>
+                    <h1 class="project-title">HelpDesk Ticketing System</h1>
+                    <p class="kicker">A support ticketing app for users, support teams, network teams, and admins.</p>
+                    <p class="muted">This project is a React and Supabase helpdesk workflow built for portfolio use. It
+                        lets users request access, submit tickets, track their own requests, and continue conversations
+                        through ticket comments and screenshot attachments.</p>
+                    <p class="muted">The admin side focuses on support operations: reviewing account requests,
+                        assigning tickets, filtering the queue, changing status and priority, and maintaining activity
+                        history across each ticket.</p>
+
+                    <div class="tags project-tags">
+                        <span>React</span>
+                        <span>Vite</span>
+                        <span>Supabase Auth</span>
+                        <span>Row Level Security</span>
+                        <span>Edge Function</span>
+                    </div>
+
+                    <div class="cta project-cta">
+                        <a class="btn primary" href="https://cj-helpdesk-site.netlify.app/" target="_blank"
+                            rel="noopener">Open Live Preview</a>
+                        <a class="btn btn-gap" href="#features">View Features</a>
+                        <a class="btn btn-gap" href="#database">Database Design</a>
+                    </div>
+
+                    <h3 class="project-subhead" id="features">What's included</h3>
+                    <ul>
+                        <li>Email and password authentication through Supabase.</li>
+                        <li>Role-based dashboards for users, admins, support team members, and network team members.</li>
+                        <li>Ticket creation, assignment, status changes, priority updates, comments, and activity logs.</li>
+                        <li>Search and filtering by status, priority, ticket content, user, and assigned team.</li>
+                        <li>Screenshot attachment support using a Supabase storage bucket.</li>
+                        <li>Account request approval flow backed by a Supabase Edge Function.</li>
+                    </ul>
+
+                    <h3 class="project-subhead" id="database">Database and security</h3>
+                    <p class="muted">The schema uses Supabase tables for profiles, tickets, account requests, knowledge
+                        base entries, and storage objects. Authenticated Row Level Security policies keep users limited
+                        to their own tickets while support and admin roles can manage queue-level work.</p>
+                </div>
+
+                <div class="card project-card">
+                    <div class="project-preview">
+                        <img src="../assets/images/helpdesk-ticketing-card.webp"
+                            alt="HelpDesk Ticketing System dashboard preview" loading="lazy" decoding="async">
+                    </div>
+                    <h3>Project preview</h3>
+                    <p>The preview shows the core helpdesk workspace: queue navigation, ticket cards, priority labels,
+                        admin updates, user replies, and status controls.</p>
+                    <a class="btn small btn-accent" href="https://cj-helpdesk-site.netlify.app/" target="_blank"
+                        rel="noopener">Open Live Preview</a>
+                    <h4 class="card-subhead">Project role</h4>
+                    <p class="muted">Built as a full-stack support workflow demo with practical IT helpdesk operations,
+                        Supabase authentication, database policies, and an approval function.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; <span id="year"></span> CJ Duot</p>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="module" src="../js/main.js"></script>
+</body>
+
+</html>

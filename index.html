@@ -1,0 +1,828 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Charles John Duot - Full-Stack Web Developer Portfolio</title>
+  <meta name="description"
+    content="Portfolio of Charles John Duot, an AI-assisted full-stack web developer building SaaS platforms, dashboards, and business websites with Next.js, React, TypeScript, Tailwind CSS, Supabase, and PostgreSQL." />
+  <meta name="author" content="Charles John Duot" />
+
+  <!-- TODO: replace with the real deployed URL (used by canonical + social share cards) -->
+  <link rel="canonical" href="https://charlesjohnduot.netlify.app/" />
+
+  <!-- Icons -->
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="/icon-32.png" type="image/png" sizes="32x32" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+
+  <!-- Open Graph / Twitter share card -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Charles John Duot" />
+  <meta property="og:title" content="Charles John Duot - Full-Stack Web Developer" />
+  <meta property="og:description"
+    content="AI-assisted full-stack web developer building SaaS platforms, dashboards, and business websites with Next.js, React, TypeScript, Tailwind CSS, Supabase, and PostgreSQL." />
+  <meta property="og:url" content="https://charlesjohnduot.netlify.app/" />
+  <meta property="og:image" content="https://charlesjohnduot.netlify.app/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Charles John Duot - AI-Assisted Full-Stack Web Developer" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Charles John Duot - Full-Stack Web Developer" />
+  <meta name="twitter:description"
+    content="AI-assisted full-stack web developer building SaaS platforms, dashboards, and business websites with Next.js, React, TypeScript, Supabase, and PostgreSQL." />
+  <meta name="twitter:image" content="https://charlesjohnduot.netlify.app/og-image.png" />
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/devicon.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Charles John Duot",
+    "url": "https://charlesjohnduot.netlify.app/",
+    "image": "https://charlesjohnduot.netlify.app/og-image.png",
+    "jobTitle": "Full-Stack Web Developer",
+    "email": "mailto:charlesjohnduot@gmail.com",
+    "address": { "@type": "PostalAddress", "addressLocality": "Rodriguez", "addressRegion": "Rizal", "addressCountry": "PH" },
+    "alumniOf": [
+      { "@type": "CollegeOrUniversity", "name": "Colegio de Montalban" },
+      { "@type": "EducationalOrganization", "name": "Asian Institute of Computer Studies" }
+    ],
+    "knowsAbout": ["Next.js", "React", "TypeScript", "Tailwind CSS", "Supabase", "PostgreSQL", "Playwright", "AI-assisted development"],
+    "sameAs": [
+      "https://github.com/CodexNoob",
+      "https://www.linkedin.com/in/charles-john-duot-6a8aa6206/"
+    ]
+  }
+  </script>
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- Popup Notification -->
+  <div id="popupNotification" class="popup-notification">
+    <i class="fas fa-check-circle"></i>
+    <span id="popupMessage"></span>
+  </div>
+
+  <!-- Animated Background -->
+  <div class="bg-anim" aria-hidden="true">
+    <span class="blob b1"></span>
+    <span class="blob b2"></span>
+    <span class="blob b3"></span>
+    <span class="blob b4"></span>
+  </div>
+
+  <!-- Tech Grid Background (light mode enhanced) -->
+  <div class="bg-tech" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <div class="container nav">
+      <a class="logo" href="#home">C<span>J</span></a>
+      <button class="nav-toggle" type="button" aria-label="Toggle menu" aria-expanded="false">
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+      <nav class="nav-menu" aria-label="Primary">
+        <a href="#about">About</a>
+        <a href="#skills">Skills & Tools</a>
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#education">Education & Certifications</a>
+        <a href="#contact">Contact</a>
+        <button class="theme-toggle" aria-label="Switch to light mode" title="Switch to light mode" type="button">
+          <i class="fas fa-sun" aria-hidden="true"></i>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- Hero -->
+    <section class="hero section" id="home">
+      <div class="container grid-2">
+        <div class="hero-copy reveal-on-scroll">
+          <h1 class="headline">Hi, I'm <span class="accent">Charles John Duot</span></h1>
+          <p class="kicker">
+            <span class="sr-only">AI-Assisted Full-Stack Web Developer | Next.js | React | TypeScript | Supabase</span>
+            <span class="typing" aria-hidden="true">AI-Assisted Full-Stack Web Developer | Next.js | React | TypeScript | Supabase</span>
+          </p>
+          <p>
+            I build responsive SaaS applications, operational dashboards, and business websites with Next.js, React,
+            TypeScript, Tailwind CSS, and Supabase/PostgreSQL. Currently developing Event Core, a multi-module hall and
+            event management platform for a New York-based client.
+          </p>
+          <div class="cta">
+            <a class="btn primary" href="#projects">View Projects</a>
+            <a class="btn ghost" href="#contact">Contact Me</a>
+            <button id="view-resume-btn" class="btn primary" type="button" aria-haspopup="dialog"
+              aria-controls="resume-modal">
+              <i class="fas fa-eye"></i>
+              <span>View Resume</span>
+            </button>
+            <a class="btn ghost" href="https://github.com/CodexNoob" target="_blank" rel="noopener noreferrer">
+              <i class="fab fa-github"></i>
+              <span>GitHub</span>
+            </a>
+          </div>
+          <div class="stats">
+            <div class="stat">
+              <span class="value">1</span>
+              <span class="label">SaaS Platform in Production</span>
+            </div>
+            <div class="stat">
+              <span class="value">12+</span>
+              <span class="label">Modules Shipped</span>
+            </div>
+            <div class="stat">
+              <span class="value">1.5</span>
+              <span class="label">BSIT GWA (2025)</span>
+            </div>
+          </div>
+          <p class="muted target-roles">
+            Open to: Full-Stack Web Developer Â· Frontend / Next.js Developer Â· Website Developer Â· AI-Assisted Developer
+          </p>
+        </div>
+        <div class="hero-art reveal-on-scroll delay-1">
+          <div class="glass card">
+            <div class="orb orb-1"></div>
+            <div class="orb orb-2"></div>
+            <div class="grid-lines"></div>
+            <img src="assets/images/profile.jpg" alt="Charles John Duot" class="avatar" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section class="section" id="about">
+      <div class="container reveal-on-scroll">
+        <div class="about-grid">
+          <div class="about-photo">
+            <img src="assets/images/About.webp" alt="Charles John Duot working at a laptop" loading="lazy" decoding="async">
+          </div>
+          <div class="about-copy">
+            <h2 class="slide-in">About</h2>
+            <p class="slide-in slide-delay-1">
+              I am a full-stack web developer who builds responsive SaaS applications, operational dashboards, business
+              websites, and database-backed workflows using Next.js, React, TypeScript, Tailwind CSS, Supabase,
+              PostgreSQL, Playwright, and Git/GitHub, deployed on Vercel and Netlify. I am currently developing Event
+              Core, a multi-module hall and event management SaaS platform for a New York-based client, covering
+              bookings, calendar availability, kitchen operations, dining and seating, hall layouts, billing, reports,
+              vendors, staff roles, and permissions. I have also worked on the Lux Kitchens website and its inquiry
+              automation workflows.
+            </p>
+            <p class="slide-in slide-delay-2">
+              I use ChatGPT, OpenAI Codex, Claude, and Base44 to accelerate prototyping, debugging, refactoring, and
+              test generation, while personally reviewing and validating every piece of production code. I translate
+              client conversations and real venue-operation requirements into implementation plans, UI behavior, and
+              production-ready features. My background in IT support and image/data annotation adds strong
+              troubleshooting, documentation, quality-control, and client-communication skills, so I approach
+              development from the user's side and focus on shipping reliable work that can be improved over time.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills & Tools -->
+    <section class="section" id="skills">
+      <div class="container reveal-on-scroll">
+        <h2>Skills & Tools</h2>
+        <h3 class="section-subtitle">Frontend</h3>
+        <div class="chip-group">
+          <span class="chip">Next.js</span>
+          <span class="chip">React</span>
+          <span class="chip">TypeScript</span>
+          <span class="chip">JavaScript</span>
+          <span class="chip">HTML5</span>
+          <span class="chip">CSS3</span>
+          <span class="chip">Tailwind CSS</span>
+          <span class="chip">Responsive UI</span>
+          <span class="chip">Component-Based Architecture</span>
+        </div>
+        <h3 class="section-subtitle">Backend & Data</h3>
+        <div class="chip-group">
+          <span class="chip">Supabase</span>
+          <span class="chip">PostgreSQL</span>
+          <span class="chip">SQL</span>
+          <span class="chip">Authentication</span>
+          <span class="chip">CRUD Workflows</span>
+          <span class="chip">REST API Basics</span>
+          <span class="chip">Row-Level Security</span>
+          <span class="chip">Database Design</span>
+          <span class="chip">Form Handling</span>
+        </div>
+        <h3 class="section-subtitle">Testing & DevOps</h3>
+        <div class="chip-group">
+          <span class="chip">Playwright</span>
+          <span class="chip">Git</span>
+          <span class="chip">GitHub</span>
+          <span class="chip">Pull Requests</span>
+          <span class="chip">Branching Workflows</span>
+          <span class="chip">Vercel</span>
+          <span class="chip">Netlify</span>
+          <span class="chip">npm</span>
+        </div>
+        <h3 class="section-subtitle">AI-Assisted Development</h3>
+        <div class="chip-group">
+          <span class="chip">ChatGPT</span>
+          <span class="chip">OpenAI Codex</span>
+          <span class="chip">Claude AI</span>
+          <span class="chip">Base44</span>
+          <span class="chip">Prompt-Driven Prototyping</span>
+          <span class="chip">AI-Assisted Debugging</span>
+          <span class="chip">Refactoring</span>
+          <span class="chip">Test Generation</span>
+        </div>
+        <h3 class="section-subtitle">Support & IT</h3>
+        <div class="chip-group">
+          <span class="chip">Windows Troubleshooting</span>
+          <span class="chip">Hardware / Software Support</span>
+          <span class="chip">LAN / Network Basics</span>
+          <span class="chip">User Account Support</span>
+          <span class="chip">Ticket Documentation</span>
+          <span class="chip">Client Communication</span>
+        </div>
+        <h3 class="section-subtitle">Tools</h3>
+        <div class="chip-group">
+          <span class="chip"><i class="devicon-nextjs-plain colored" aria-hidden="true"></i><span
+              class="tool-name">Next.js</span></span>
+          <span class="chip"><i class="devicon-react-original colored" aria-hidden="true"></i><span
+              class="tool-name">React</span></span>
+          <span class="chip"><i class="devicon-typescript-plain colored" aria-hidden="true"></i><span
+              class="tool-name">TypeScript</span></span>
+          <span class="chip"><i class="devicon-javascript-plain colored" aria-hidden="true"></i><span
+              class="tool-name">JavaScript</span></span>
+          <span class="chip"><i class="devicon-tailwindcss-plain colored" aria-hidden="true"></i><span
+              class="tool-name">Tailwind CSS</span></span>
+          <span class="chip"><img src="assets/images/supabaseicon.webp" alt="" aria-hidden="true" loading="lazy" decoding="async"><span
+              class="tool-name">Supabase</span></span>
+          <span class="chip"><i class="devicon-postgresql-plain colored" aria-hidden="true"></i><span
+              class="tool-name">PostgreSQL</span></span>
+          <span class="chip"><i class="devicon-playwright-plain colored" aria-hidden="true"></i><span
+              class="tool-name">Playwright</span></span>
+          <a class="chip" href="https://git-scm.com/downloads" target="_blank" rel="noopener noreferrer"
+            aria-label="Download Git">
+            <i class="devicon-git-plain colored" aria-hidden="true"></i>
+            <span class="tool-name">Git</span>
+          </a>
+          <a class="chip" href="https://github.com/CodexNoob" target="_blank" rel="noopener noreferrer"
+            aria-label="GitHub profile">
+            <i class="devicon-github-original colored" aria-hidden="true"></i>
+            <span class="tool-name">GitHub</span>
+          </a>
+          <span class="chip">
+            <svg class="brand-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="32" height="32" fill="currentColor" aria-hidden="true">
+              <path d="M24 22.525H0l12-21.05 12 21.05z" />
+            </svg>
+            <span class="tool-name">Vercel</span>
+          </span>
+          <span class="chip"><img src="assets/images/netlify-logo.png" alt="" aria-hidden="true" loading="lazy" decoding="async"><span
+              class="tool-name">Netlify</span></span>
+          <span class="chip"><i class="devicon-npm-original-wordmark colored" aria-hidden="true"></i><span
+              class="tool-name">npm</span></span>
+          <a class="chip" href="https://code.visualstudio.com/download" target="_blank" rel="noopener noreferrer"
+            aria-label="Download VS Code">
+            <i class="devicon-vscode-plain colored" aria-hidden="true"></i>
+            <span class="tool-name">VS Code</span>
+          </a>
+          <span class="chip"><img src="assets/images/base44Icon.webp" alt="" aria-hidden="true" loading="lazy" decoding="async"><span
+              class="tool-name">Base44</span></span>
+          <span class="chip">
+            <svg class="brand-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="32" height="32" fill="currentColor" aria-hidden="true">
+              <path d="M22.2819 9.8211a5.9847 5.9847 0 0 0-.5157-4.9108 6.0462 6.0462 0 0 0-6.5098-2.9A6.0651 6.0651 0 0 0 4.9807 4.1818a5.9847 5.9847 0 0 0-3.9977 2.9 6.0462 6.0462 0 0 0 .7427 7.0966 5.98 5.98 0 0 0 .511 4.9107 6.051 6.051 0 0 0 6.5146 2.9001A5.9847 5.9847 0 0 0 13.2599 24a6.0557 6.0557 0 0 0 5.7718-4.2058 5.9894 5.9894 0 0 0 3.9977-2.9001 6.0557 6.0557 0 0 0-.7475-7.0729zm-9.022 12.6081a4.4755 4.4755 0 0 1-2.8764-1.0408l.1419-.0804 4.7783-2.7582a.7948.7948 0 0 0 .3927-.6813v-6.7369l2.02 1.1686a.071.071 0 0 1 .038.052v5.5826a4.504 4.504 0 0 1-4.4945 4.4944zm-9.6607-4.1254a4.4708 4.4708 0 0 1-.5346-3.0137l.142.0852 4.783 2.7582a.7712.7712 0 0 0 .7806 0l5.8428-3.3685v2.3324a.0804.0804 0 0 1-.0332.0615L9.74 19.9502a4.4992 4.4992 0 0 1-6.1408-1.6464zM2.3408 7.8956a4.485 4.485 0 0 1 2.3655-1.9728V11.6a.7664.7664 0 0 0 .3879.6765l5.8144 3.3543-2.0201 1.1685a.0757.0757 0 0 1-.071 0l-4.8303-2.7865A4.504 4.504 0 0 1 2.3408 7.872zm16.5963 3.8558L13.1038 8.364 15.1192 7.2a.0757.0757 0 0 1 .071 0l4.8303 2.7913a4.4944 4.4944 0 0 1-.6765 8.1042v-5.6772a.79.79 0 0 0-.407-.667zm2.0107-3.0231l-.142-.0852-4.7735-2.7818a.7759.7759 0 0 0-.7854 0L9.409 9.2297V6.8974a.0662.0662 0 0 1 .0284-.0615l4.8303-2.7866a4.4992 4.4992 0 0 1 6.6802 4.66zM8.3065 12.863l-2.02-1.1638a.0804.0804 0 0 1-.038-.0567V6.0742a4.4992 4.4992 0 0 1 7.3757-3.4537l-.142.0805L8.704 5.459a.7948.7948 0 0 0-.3927.6813zm1.0976-2.3654l2.602-1.4998 2.6069 1.4998v2.9994l-2.5974 1.4997-2.6067-1.4997Z" />
+            </svg>
+            <span class="tool-name">ChatGPT / Codex</span>
+          </span>
+          <span class="chip">
+            <svg class="brand-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="32" height="32" fill="#D97757" aria-hidden="true">
+              <path d="m4.7144 15.9555 4.7174-2.6471.079-.2307-.079-.1275h-.2307l-.7893-.0486-2.6956-.0729-2.3375-.0971-2.2646-.1214-.5707-.1215-.5343-.7042.0546-.3522.4797-.3218.686.0608 1.5179.1032 2.2767.1578 1.6514.0972 2.4468.255h.3886l.0546-.1579-.1336-.0971-.1032-.0972L6.973 9.8356l-2.55-1.6879-1.3356-.9714-.7225-.4918-.3643-.4614-.1578-1.0078.6557-.7225.8803.0607.2246.0607.8925.686 1.9064 1.4754 2.4893 1.8336.3643.3035.1457-.1032.0182-.0728-.164-.2733-1.3539-2.4467-1.445-2.4893-.6435-1.032-.17-.6194c-.0607-.255-.1032-.4674-.1032-.7285L6.287.1335 6.6997 0l.9957.1336.419.3642.6192 1.4147 1.0018 2.2282 1.5543 3.0296.4553.8985.2429.8318.091.255h.1579v-.1457l.1275-1.706.2368-2.0947.2307-2.6957.0789-.7589.3764-.9107.7468-.4918.5828.2793.4797.686-.0668.4433-.2853 1.8517-.5586 2.9021-.3643 1.9429h.2125l.2429-.2429.9835-1.3053 1.6514-2.0643.7286-.8196.85-.9046.5464-.4311h1.0321l.759 1.1293-.34 1.1657-1.0625 1.3478-.8804 1.1414-1.2628 1.7-.7893 1.36.0729.1093.1882-.0183 2.8535-.607 1.5421-.2794 1.8396-.3157.8318.3886.091.3946-.3278.8075-1.967.4857-2.3072.4614-3.4364.8136-.0425.0304.0486.0607 1.5482.1457.6618.0364h1.621l3.0175.2247.7892.522.4736.6376-.079.4857-1.2142.6193-1.6393-.3886-3.825-.9107-1.3113-.3279h-.1822v.1093l1.0929 1.0686 2.0035 1.8092 2.5075 2.3314.1275.5768-.3218.4554-.34-.0486-2.2039-1.6575-.85-.7468-1.9246-1.621h-.1275v.17l.4432.6496 2.3436 3.5214.1214 1.0807-.17.3521-.6071.2125-.6679-.1214-1.3721-1.9246L14.38 17.959l-1.1414-1.9428-.1397.079-.674 7.2552-.3156.3703-.7286.2793-.6071-.4614-.3218-.7468.3218-1.4753.3886-1.9246.3157-1.53.2853-1.9004.17-.6314-.0121-.0425-.1397.0182-1.4328 1.9672-2.1796 2.9446-1.7243 1.8456-.4128.164-.7164-.3704.0667-.6618.4008-.5889 2.386-3.0357 1.4389-1.882.929-1.0868-.0062-.1579h-.0546l-6.3385 4.1164-1.1293.1457-.4857-.4554.0608-.7467.2307-.2429 1.9064-1.3114Z" />
+            </svg>
+            <span class="tool-name">Claude AI</span>
+          </span>
+          <span class="chip"><span class="stack"><i class="devicon-php-plain colored" aria-hidden="true"></i><i
+                  class="devicon-mysql-plain colored" aria-hidden="true"></i></span><span class="tool-name">PHP + MySQL
+                (basic)</span></span>
+          <span class="chip"><i class="devicon-windows8-original colored" aria-hidden="true"></i><span
+              class="tool-name">Windows</span></span>
+          <span class="chip"><i class="fas fa-ethernet lan-icon" aria-hidden="true"></i>
+            <span class="tool-name">Basic LAN setup</span></span>
+          <span class="chip">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="32" height="32" aria-hidden="true">
+              <path fill="#ff5722" d="M6 6h22.572v36H6z" />
+              <path fill="#ff9800" d="M13.783 7h14.79v32h-14.79z" />
+              <path fill="#ffc107" d="M13.783 7L27.57 24 13.783 32z" />
+              <path fill="#9c27b0" d="M21.783 7h14.79v32h-14.79z" />
+              <path fill="#e91e63" d="M21.783 7L35.57 24l-13.786 15z" />
+            </svg>
+            <span class="tool-name">MS Office</span>
+          </span>
+          <a class="chip" href="https://workspace.google.com/" target="_blank" rel="noopener noreferrer"
+            aria-label="Google Workspace">
+            <i class="devicon-google-plain colored" aria-hidden="true"></i>
+            <span class="tool-name">Google Workspace</span>
+          </a>
+          <span class="chip"><img src="assets/images/monday-logo.jpg" alt="" aria-hidden="true" loading="lazy" decoding="async"><span
+              class="tool-name">monday.com</span></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section class="section" id="projects">
+      <div class="container reveal-on-scroll">
+        <h2>Projects</h2>
+        <div class="cards">
+          <article class="card project-card">
+            <div class="project-preview">
+              <img src="assets/images/event-core-card.webp" alt="Event Core landing page with the hall management dashboard preview" loading="lazy" decoding="async">
+            </div>
+            <h3>Event Core</h3>
+            <p>Multi-module hall and event management SaaS platform: bookings, calendar availability, kitchen
+              production, dining and seating, hall layouts, billing, reports, vendors, staff roles, and permissions.</p>
+            <div class="tags"><span>Next.js</span><span>TypeScript</span><span>Tailwind</span><span>Supabase</span><span>Playwright</span></div>
+            <a class="btn small btn-accent" href="projects/event-core.html" target="_self"
+              rel="noopener">Details</a>
+          </article>
+          <article class="card project-card">
+            <div class="project-preview">
+              <img src="assets/images/lux-kitchens-card.webp" alt="Lux Kitchens homepage and designer access preview" loading="lazy" decoding="async">
+            </div>
+            <h3>Lux Kitchens</h3>
+            <p>Bespoke kitchen and cabinetry website with Supabase-backed inquiry workflows, contact validation,
+              automated notification and customer auto-reply emails, plus Designer Portal and admin tools.</p>
+            <div class="tags"><span>Base44</span><span>Supabase</span><span>Form Validation</span><span>Email Workflows</span></div>
+            <a class="btn small btn-accent" href="projects/lux-kitchens.html" target="_self"
+              rel="noopener">Details</a>
+          </article>
+          <article class="card project-card">
+            <div class="project-preview">
+              <img src="assets/images/cj-ai-assistant-card.png" alt="CJ AI Assistant chat interface preview" loading="lazy" decoding="async">
+            </div>
+            <h3>CJ AI Assistant</h3>
+            <p>An intelligent AI assistant with a sleek CJ logo, designed to help with various tasks and provide smart
+              assistance.</p>
+            <div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>AI UI</span></div>
+            <a class="btn small btn-accent" href="projects/cj-ai-assistant.html" target="_self"
+              rel="noopener">Details</a>
+          </article>
+          <article class="card project-card">
+            <div class="project-preview">
+              <img src="assets/images/helpdesk-ticketing-card.webp" alt="HelpDesk Ticketing System dashboard preview" loading="lazy" decoding="async">
+            </div>
+            <h3>HelpDesk Ticketing System</h3>
+            <p>React and Supabase ticketing app with user request flows, role-based dashboards, ticket queues, comments,
+              attachments, and admin approvals.</p>
+            <div class="tags"><span>React</span><span>Supabase</span><span>RLS</span><span>Admin Dashboard</span></div>
+            <a class="btn small btn-accent" href="projects/helpdesk-ticketing-system.html" target="_self"
+              rel="noopener">Details</a>
+          </article>
+          <article class="card project-card">
+            <div class="project-preview">
+              <img src="assets/images/starlegends-card.webp" alt="StarLegends Rodriguez Branch website preview" loading="lazy" decoding="async">
+            </div>
+            <h3>StarLegends Rodriguez Branch</h3>
+            <p>Base44-built live website for the Rodriguez branch, focused on presenting the branch experience and
+              giving visitors a direct online entry point.</p>
+            <div class="tags"><span>Base44</span><span>Branch Website</span><span>Live Site</span></div>
+            <a class="btn small btn-accent" href="projects/starlegends-rodriguez.html" target="_self"
+              rel="noopener">Details</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience -->
+    <section class="section" id="experience">
+      <div class="container reveal-on-scroll">
+        <h2>Experience</h2>
+        <div class="timeline">
+          <div class="timeline-item">
+            <span class="time">2026 â€” Present</span>
+            <div class="content">
+              <h3>Freelance Full-Stack Web Developer â€¢ Remote â€” New York-based Client</h3>
+              <ul>
+                <li>Develop and maintain Event Core, a multi-module hall and event management SaaS platform using
+                  Next.js, React, TypeScript, Tailwind CSS, Supabase/PostgreSQL, Playwright, Git/GitHub, Vercel, and
+                  Netlify.</li>
+                <li>Build responsive dashboards and workflow modules for bookings, calendar availability, event
+                  management, kitchen operations, dining/seating, hall layouts, billing, reports, vendors, staff roles,
+                  permissions, and platform settings.</li>
+                <li>Implement database-backed features including authentication flows, CRUD operations, form handling,
+                  persistence, role-aware workflows, and operational management screens.</li>
+                <li>Translate client conversations and real venue-operation requirements into implementation plans, UI
+                  behavior, workflow decisions, and production-ready features.</li>
+                <li>Use Playwright to validate critical flows including mutation, persistence, menu-selection, and
+                  dashboard interactions; troubleshoot frontend, backend, database, and deployment issues.</li>
+                <li>Collaborate through GitHub branches, pull requests, commits, merges, and hosted deployment
+                  workflows, while using ChatGPT, Codex, Claude, and Base44 for AI-assisted development and personally
+                  validating generated code.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <span class="time">Project Experience</span>
+            <div class="content">
+              <h3>React, Supabase, and SQL Web Development</h3>
+              <ul>
+                <li>Built a HelpDesk Ticketing System using React and Supabase with ticket queues, user request flows,
+                  comments, attachments, admin approvals, and role-based dashboards.</li>
+                <li>Designed and tested SQL tables, relationships, policies, and database workflows for authenticated
+                  application features.</li>
+                <li>Worked with API-style data flows for authentication, ticket updates, comments, file handling, and
+                  contact form submissions.</li>
+                <li>Improved UI behavior, responsive layouts, state handling, and error feedback based on actual user
+                  flows instead of only visual mockups.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <span class="time">Project Experience</span>
+            <div class="content">
+              <h3>Base44 App Builder Experience</h3>
+              <ul>
+                <li>Built and customized web app prototypes using Base44, including page layouts, data-driven screens,
+                  and admin-style workflows.</li>
+                <li>Configured app entities, forms, dashboards, and user flows for client-facing experiences such as
+                  designer portals and project management tools.</li>
+                <li>Tested and refined generated applications by reviewing UI behavior, data handling, navigation, and
+                  responsive layout details.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <span class="time">Jan 2025 â€” May 2025</span>
+            <div class="content">
+              <h3>IT Assistant Intern â€¢ MANSFIELD INTERNATIONAL, INC. â€” Manila, Philippines (Remote)</h3>
+              <ul>
+                <li>Provided technical support for Windows computers, hardware/software issues, user accounts, system
+                  updates, and basic LAN/network troubleshooting.</li>
+                <li>Documented incidents and support work clearly, helping track issues and maintain consistent
+                  troubleshooting procedures.</li>
+                <li>Assisted with database-related tasks and built or maintained basic HTML, CSS, and JavaScript
+                  pages.</li>
+                <li>Worked with PHP and SQL on an internal payroll-system project (HanFord), designing and managing
+                  databases for employee records, salary computation, and reports.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <span class="time">Jan 2024 â€” Sep 2024</span>
+            <div class="content">
+              <h3>Online Labeler / Image & Dataset Annotation â€¢ ATINDATA, INC. â€” Remote</h3>
+              <ul>
+                <li>Annotated images and datasets according to project-specific guidelines with a strong focus on
+                  accuracy, consistency, and quality control.</li>
+                <li>Reviewed labeling work carefully, followed detailed instructions, and corrected inconsistencies
+                  before submission.</li>
+                <li>Met deadlines in a remote environment while maintaining reliable output across repetitive,
+                  detail-sensitive tasks.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education & Certifications -->
+    <section class="section" id="education">
+      <div class="container reveal-on-scroll">
+        <h2>Education & Certifications</h2>
+        <div class="timeline">
+          <div class="timeline-item">
+            <span class="time">Graduation: July 2025 â€¢ GWA: 1.5</span>
+            <div class="content">
+              <h3>COLEGIO DE MONTALBAN â€” Rodriguez, Province of Rizal, Philippines</h3>
+              <p>Bachelor of Science in Information Technology (BSIT)</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <span class="time">Graduation: March 2020 â€¢ GWA: 1.75</span>
+            <div class="content">
+              <h3>ASIAN INSTITUTE OF COMPUTER STUDIES â€” Rodriguez, Province of Rizal, Philippines</h3>
+              <p>Information Communication Technology (ICT)</p>
+            </div>
+          </div>
+        </div>
+        <h3 class="section-subtitle">Certifications</h3>
+        <ul class="cert-list">
+          <li>
+            <div class="flip-card" tabindex="0" role="button" aria-pressed="false" aria-label="Flip certification card">
+              <div class="flip-inner">
+                <div class="flip-front">
+                  <picture>
+                    <source type="image/jpeg" srcset="assets/images/CompTIA_A+_part1.jpg" />
+                    <img src="assets/images/CompTIA_A+_part1.jpg" alt="CompTIA A+ Core 1 badge" class="cert-badge" loading="lazy" decoding="async">
+                  </picture>
+                </div>
+                <div class="flip-back">
+                  <div class="cert-back-content">
+                    <h3>CompTIA A+ (Core 1)</h3>
+                    <p>Foundational IT skills: hardware, networking, mobile devices, virtualization, and
+                      troubleshooting.</p>
+                    <!-- Optional: add verification link -->
+                    <!-- <a class="btn small" href="#" target="_blank" rel="noopener">Verify</a> -->
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="section" id="contact">
+      <div class="container reveal-on-scroll">
+        <h2>Contact</h2>
+        <div class="contact-container">
+          <div class="contact-info">
+            <h3>Contact Information</h3>
+            <p class="contact-location">
+              <svg class="icon" viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true">
+                <path
+                  d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+              </svg>
+              Rodriguez, Rizal, Philippines &middot; Remote-ready (working with a US client)
+            </p>
+            <div class="contact-methods">
+              <a class="contact-method" href="mailto:charlesjohnduot@gmail.com">
+                <svg class="icon" viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                  <path
+                    d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+                </svg>
+                <span>charlesjohnduot@gmail.com</span>
+              </a>
+              <a class="contact-method" href="tel:+639197621060">
+                <svg class="icon" viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                  <path
+                    d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56-.35-.12-.74-.03-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z" />
+                </svg>
+                <span>+63 919 762 1060</span>
+              </a>
+            </div>
+            <div class="social-links">
+              <a href="https://github.com/CodexNoob" target="_blank" rel="noopener noreferrer"
+                aria-label="GitHub" class="social-link">
+                <i class="fab fa-github"></i>
+              </a>
+              <a href="https://www.linkedin.com/in/charles-john-duot-6a8aa6206/" target="_blank"
+                rel="noopener noreferrer" aria-label="LinkedIn" class="social-link">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+              <a href="https://www.facebook.com/charlesjhon.duot" target="_blank" rel="noopener noreferrer"
+                aria-label="Facebook" class="social-link">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a href="https://wa.me/639197621060?text=Hi%20Charles!%20I%20saw%20your%20portfolio%20and%20wanted%20to%20connect."
+                target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" class="social-link">
+                <i class="fab fa-whatsapp"></i>
+              </a>
+              <a href="https://www.instagram.com/charlesjohnduot/" target="_blank" rel="noopener noreferrer"
+                aria-label="Instagram" class="social-link">
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a href="https://www.tiktok.com/@c_jo.hn?is_from_webapp=1&sender_device=pc" target="_blank"
+                rel="noopener noreferrer" aria-label="TikTok" class="social-link">
+                <i class="fab fa-tiktok"></i>
+              </a>
+            </div>
+          </div>
+          <div class="contact-form-container">
+            <h3>Send Me a Message</h3>
+            <form id="contactForm" class="contact-form" action="https://formspree.io/f/xldpbaga" method="POST">
+              <div id="form-status" class="form-status contact-form-status">
+              </div>
+              <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required>
+              </div>
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+              </div>
+              <div class="form-group">
+                <label for="subject">Subject</label>
+                <input type="text" id="subject" name="subject" required>
+              </div>
+              <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+              </div>
+              <button type="submit" class="btn primary" id="submitBtn">
+                <span>Send Message</span>
+                <svg class="icon" viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                  <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z" />
+                </svg>
+              </button>
+            </form>
+            <script>
+              const form = document.getElementById('contactForm');
+              const formStatus = document.getElementById('form-status');
+              const submitBtn = document.getElementById('submitBtn');
+
+              async function handleSubmit(event) {
+                // Prevent default form submission
+                if (event) {
+                  event.preventDefault();
+                  event.stopPropagation();
+                }
+
+                // Save original button content
+                const originalBtnContent = submitBtn.innerHTML;
+                const originalBtnWidth = submitBtn.offsetWidth + 'px';
+
+                // Set a fixed width to prevent button from resizing
+                submitBtn.style.width = originalBtnWidth;
+                submitBtn.style.minWidth = originalBtnWidth;
+
+                // Disable submit button and show loading state
+                submitBtn.disabled = true;
+                submitBtn.innerHTML = '<span>Sending...</span>';
+
+                try {
+                  const formData = new FormData(form);
+                  // Convert form data to URL-encoded format
+                  const formBody = new URLSearchParams();
+                  for (const [key, value] of formData.entries()) {
+                    formBody.append(key, value);
+                  }
+
+                  const response = await fetch(form.action, {
+                    method: 'POST',
+                    body: formBody,
+                    headers: {
+                      'Accept': 'application/json',
+                      'Content-Type': 'application/x-www-form-urlencoded'
+                    }
+                  });
+
+                  // Check if the response is JSON before parsing
+                  const contentType = response.headers.get('content-type');
+                  let result;
+                  if (contentType && contentType.includes('application/json')) {
+                    result = await response.json();
+                  } else {
+                    result = await response.text();
+                  }
+
+                  if (!response.ok) {
+                    throw new Error(result.message || 'Failed to send message');
+                  }
+
+                  // If we get here, the message was sent successfully
+                  showStatus('Message sent successfully! I\'ll get back to you soon.', 'success');
+                  form.reset();
+                } catch (error) {
+                  console.error('Form submission error:', error);
+                  showStatus(error.message || 'There was a problem sending your message. Please try again later.', 'error');
+                } finally {
+                  // Always re-enable the button and restore its content
+                  submitBtn.disabled = false;
+                  submitBtn.innerHTML = originalBtnContent;
+                  submitBtn.style.width = '';
+                  submitBtn.style.minWidth = '';
+                }
+              }
+
+              function showStatus(message, type) {
+                // Get popup elements
+                const popup = document.getElementById('popupNotification');
+                const popupMessage = document.getElementById('popupMessage');
+                const icon = popup.querySelector('i');
+
+                // Make sure popup is visible
+                popup.style.display = 'flex';
+
+                // Update popup content and style
+                popupMessage.textContent = message;
+                popup.className = `popup-notification ${type}`;
+
+                // Force reflow to ensure the animation plays
+                void popup.offsetWidth;
+
+                // Add show class after a small delay to trigger animation
+                setTimeout(() => {
+                  popup.classList.add('show');
+                }, 10);
+
+                // Update icon based on message type
+                icon.className = type === 'success'
+                  ? 'fas fa-check-circle'
+                  : 'fas fa-exclamation-circle';
+
+                // Hide popup after 5 seconds
+                setTimeout(() => {
+                  popup.classList.remove('show');
+                  // Hide completely after animation
+                  setTimeout(() => {
+                    popup.style.display = 'none';
+                  }, 400);
+                }, 5000);
+              }
+
+              form.addEventListener('submit', handleSubmit);
+            </script>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Resume modal (opens inline, not a new tab) -->
+  <div id="resume-modal" class="modal" aria-hidden="true">
+    <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="resume-title">
+      <div class="modal-header">
+        <h2 id="resume-title">Resume â€” Charles John Duot</h2>
+        <div class="modal-actions">
+          <a id="resume-download" class="btn ghost" href="assets/Charles_John_Duot_Resume.pdf" download
+            title="Download resume">
+            <i class="fa fa-download download-icon" aria-hidden="true"></i>Download
+          </a>
+          <button class="close" type="button" id="close-resume-modal" aria-label="Close resume">&times;</button>
+        </div>
+      </div>
+      <div class="modal-body resume-modal-body">
+        <iframe id="resume-iframe" class="resume-frame" src="" title="Resume"
+          aria-label="Resume preview"></iframe>
+      </div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>Â© <span id="year"></span> CJ Duot</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <script type="module" src="js/main.js"></script>
+  <script>
+    (function () {
+      const openBtn = document.getElementById('view-resume-btn');
+      const modal = document.getElementById('resume-modal');
+      const closeBtn = document.getElementById('close-resume-modal');
+      const iframe = document.getElementById('resume-iframe');
+      const downloadLink = document.getElementById('resume-download');
+      let lastFocused = null;
+
+      function trapFocus(e) {
+        if (e.key !== 'Tab') return;
+        const focusable = modal.querySelectorAll('a[href], button, textarea, input, select, [tabindex]:not([tabindex="-1"])');
+        if (!focusable.length) return;
+        const first = focusable[0];
+        const last = focusable[focusable.length - 1];
+        if (e.shiftKey && document.activeElement === first) {
+          e.preventDefault(); last.focus();
+        } else if (!e.shiftKey && document.activeElement === last) {
+          e.preventDefault(); first.focus();
+        }
+      }
+
+      function showModal() {
+        lastFocused = document.activeElement;
+        modal.style.display = 'flex';
+        requestAnimationFrame(() => modal.classList.add('open'));
+        document.body.classList.add('modal-open');
+        modal.setAttribute('aria-hidden', 'false');
+        // set iframe src lazily to avoid preloading large PDF
+        const src = encodeURI('assets/Charles_John_Duot_Resume.pdf');
+        iframe.src = src;
+        if (downloadLink) downloadLink.href = src;
+        closeBtn.focus();
+        document.addEventListener('keydown', trapFocus);
+      }
+
+      function hideModal() {
+        modal.classList.remove('open');
+        document.body.classList.remove('modal-open');
+        modal.setAttribute('aria-hidden', 'true');
+        document.removeEventListener('keydown', trapFocus);
+        // allow transition then remove from layout and clear iframe
+        setTimeout(() => {
+          modal.style.display = 'none';
+          iframe.src = '';
+          if (lastFocused && typeof lastFocused.focus === 'function') lastFocused.focus();
+          lastFocused = null;
+        }, 220);
+      }
+
+      if (openBtn) openBtn.addEventListener('click', (e) => { e.preventDefault(); showModal(); });
+      if (closeBtn) closeBtn.addEventListener('click', hideModal);
+      window.addEventListener('click', (e) => { if (e.target === modal) hideModal(); });
+      document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && modal.classList.contains('open')) hideModal(); });
+    })();
+  </script>
+</body>
+
+</html>
+
+

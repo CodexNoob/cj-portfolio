@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">StarLegends Rodriguez Branch project preview</title>
+  <desc id="desc">A stylized website dashboard preview for the StarLegends Rodriguez Branch project.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#0f172a"/>
+      <stop offset="0.55" stop-color="#1e1b4b"/>
+      <stop offset="1" stop-color="#4c1d95"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0" x2="1">
+      <stop offset="0" stop-color="#fbbf24"/>
+      <stop offset="1" stop-color="#f97316"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="18" stdDeviation="20" flood-color="#020617" flood-opacity="0.35"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="675" fill="url(#bg)"/>
+  <circle cx="980" cy="110" r="220" fill="#f59e0b" opacity="0.16"/>
+  <circle cx="160" cy="560" r="260" fill="#38bdf8" opacity="0.12"/>
+  <g opacity="0.22">
+    <path d="M90 120h1020M90 220h1020M90 320h1020M90 420h1020M90 520h1020" stroke="#e0e7ff"/>
+    <path d="M180 70v540M340 70v540M500 70v540M660 70v540M820 70v540M980 70v540" stroke="#e0e7ff"/>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="130" y="96" width="940" height="484" rx="28" fill="#0b1220" opacity="0.94"/>
+    <rect x="130" y="96" width="940" height="72" rx="28" fill="#111827"/>
+    <circle cx="174" cy="132" r="9" fill="#fb7185"/>
+    <circle cx="204" cy="132" r="9" fill="#fbbf24"/>
+    <circle cx="234" cy="132" r="9" fill="#34d399"/>
+    <rect x="286" y="118" width="360" height="28" rx="14" fill="#1f2937"/>
+    <rect x="690" y="118" width="148" height="28" rx="14" fill="url(#gold)"/>
+    <rect x="864" y="118" width="124" height="28" rx="14" fill="#312e81"/>
+  </g>
+  <g>
+    <text x="184" y="246" fill="#f8fafc" font-family="Inter, Arial, sans-serif" font-size="54" font-weight="850">StarLegends</text>
+    <text x="187" y="292" fill="#fbbf24" font-family="Inter, Arial, sans-serif" font-size="26" font-weight="750">Rodriguez Branch</text>
+    <text x="187" y="338" fill="#cbd5e1" font-family="Inter, Arial, sans-serif" font-size="21">Base44-powered website and branch experience</text>
+    <rect x="187" y="386" width="160" height="46" rx="23" fill="url(#gold)"/>
+    <text x="227" y="416" fill="#111827" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="800">Live Site</text>
+  </g>
+  <g transform="translate(650 224)">
+    <path d="M146 0l36 77 84 10-62 57 16 83-74-41-74 41 16-83-62-57 84-10z" fill="url(#gold)"/>
+    <rect x="-42" y="288" width="376" height="22" rx="11" fill="#334155"/>
+    <rect x="-42" y="332" width="270" height="22" rx="11" fill="#475569"/>
+    <rect x="-42" y="376" width="330" height="22" rx="11" fill="#334155"/>
+  </g>
+</svg>

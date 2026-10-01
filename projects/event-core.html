@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Event Core - Project | Charles John Duot</title>
+    <meta name="description"
+        content="Event Core project details: a multi-module hall and event management SaaS platform built with Next.js, React, TypeScript, Tailwind CSS, Supabase/PostgreSQL, and Playwright." />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/devicon.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <div class="bg-anim" aria-hidden="true">
+        <span class="blob b1"></span>
+        <span class="blob b2"></span>
+        <span class="blob b3"></span>
+        <span class="blob b4"></span>
+    </div>
+    <div class="bg-tech" aria-hidden="true"></div>
+
+    <header class="site-header">
+        <div class="container nav">
+            <a class="logo" href="../index.html">C<span>J</span></a>
+            <button class="nav-toggle" type="button" aria-label="Toggle menu" aria-expanded="false">
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+            <nav class="nav-menu" aria-label="Primary">
+                <a href="../index.html#about" target="_self">About</a>
+                <a href="../index.html#skills" target="_self">Skills & Tools</a>
+                <a href="../index.html#projects" target="_self">Projects</a>
+                <a href="../index.html#experience" target="_self">Experience</a>
+                <a href="../index.html#education" target="_self">Education & Certifications</a>
+                <a href="../index.html#contact" target="_self">Contact</a>
+                <button class="theme-toggle" aria-label="Switch to light mode" title="Switch to light mode"
+                    type="button">
+                    <i class="fas fa-sun" aria-hidden="true"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main">
+        <section class="section project-hero">
+            <div class="container grid-2 reveal-on-scroll">
+                <div class="project-copy">
+                    <a href="../index.html#projects" class="btn project-back"
+                        aria-label="Back to projects">&larr; Projects</a>
+                    <h1 class="project-title">Event Core</h1>
+                    <p class="kicker">Hall &amp; event management SaaS platform for a New York-based client.</p>
+
+                    <p class="muted">Event Core is a full-stack, multi-module SaaS platform I develop and maintain as a
+                        freelance full-stack developer (2026 – present). It runs the day-to-day operations of an event
+                        venue: bookings, calendar availability, event management, kitchen production, dining and
+                        seating, hall layouts, billing, reports, vendors, staff roles, permissions, and platform
+                        settings. Built with Next.js, React, TypeScript, Tailwind CSS, Supabase/PostgreSQL, and
+                        Playwright, and deployed through GitHub, Vercel, and Netlify.</p>
+
+                    <div class="tags project-tags">
+                        <span>Next.js</span>
+                        <span>React</span>
+                        <span>TypeScript</span>
+                        <span>Tailwind CSS</span>
+                        <span>Supabase</span>
+                        <span>PostgreSQL</span>
+                        <span>Playwright</span>
+                        <span>Vercel</span>
+                        <span>Netlify</span>
+                    </div>
+
+                    <div class="cta project-cta">
+                        <a class="btn primary" href="https://event-core-saas.vercel.app/" target="_blank"
+                            rel="noopener noreferrer">Click Here to Open Live Site</a>
+                        <a class="btn btn-gap" href="#modules">View Modules</a>
+                    </div>
+
+                    <h3 class="project-subhead" id="modules">Modules &amp; workflows</h3>
+                    <ul>
+                        <li><strong>Bookings &amp; Calendar</strong> — booking creation and management with calendar
+                            availability checks across halls and dates.</li>
+                        <li><strong>Event Management</strong> — event details, schedules, and status tracking tied to
+                            bookings.</li>
+                        <li><strong>Kitchen Operations</strong> — menu selection and kitchen-only production jobs so
+                            kitchen staff see exactly what to prepare.</li>
+                        <li><strong>Dining &amp; Seating</strong> — Dining Manager for table assignments and seating
+                            plans.</li>
+                        <li><strong>Hall Layouts</strong> — Hall Room Map with reusable hall presets for fast setup of
+                            recurring configurations.</li>
+                        <li><strong>Billing &amp; Reports</strong> — billing records and operational reports for
+                            management.</li>
+                        <li><strong>Vendors, Staff &amp; Permissions</strong> — vendor records, staff roles, and
+                            role-aware workflows that limit what each user can see and do.</li>
+                        <li><strong>Platform Settings</strong> — configuration screens for venue-level defaults.</li>
+                    </ul>
+
+                    <h3 class="project-subhead" id="engineering">Engineering notes</h3>
+                    <ul>
+                        <li>Implemented authentication flows, CRUD operations, form handling, PostgreSQL persistence,
+                            and role/permission concepts on Supabase.</li>
+                        <li>Built responsive operational dashboards that work on both desktop and mobile for on-site
+                            venue staff.</li>
+                        <li>Used Playwright to validate critical flows — mutation, persistence, menu-selection, and
+                            dashboard interactions — before merging.</li>
+                        <li>Translated client conversations and real venue-operation requirements into implementation
+                            plans, UI behavior, and workflow decisions.</li>
+                        <li>Collaborated through GitHub branches, pull requests, commits, and merges with hosted
+                            deployments on Vercel and Netlify.</li>
+                        <li>Used ChatGPT, OpenAI Codex, Claude, and Base44 to accelerate prototyping, debugging,
+                            refactoring, and test generation, while personally reviewing and validating all production
+                            code.</li>
+                    </ul>
+
+                    <h3 class="project-subhead">Project role</h3>
+                    <p class="muted">Sole full-stack developer working directly with the client — responsible for
+                        implementation, testing, troubleshooting across frontend, backend, database, and deployment,
+                        and ongoing feature delivery.</p>
+                </div>
+
+                <div class="card project-card">
+                    <div class="project-preview">
+                        <img src="../assets/images/event-core-card.webp"
+                            alt="Event Core landing page with the hall management dashboard preview" loading="lazy" decoding="async">
+                    </div>
+
+                    <h3>Project preview</h3>
+                    <p>The Event Core landing page with the hall management dashboard: bookings, revenue, occupancy,
+                        multi-hall calendar, upcoming events, and occupancy analytics.</p>
+
+                    <h4 class="card-subhead">Live project</h4>
+                    <p class="muted">Use the button below to open the deployed Event Core SaaS platform.</p>
+                    <a class="btn small btn-accent" href="https://event-core-saas.vercel.app/" target="_blank"
+                        rel="noopener noreferrer">Click Here</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="section project-detail">
+            <div class="container reveal-on-scroll">
+                <h2>Platform Interfaces</h2>
+                <div class="cards project-gallery">
+                    <article class="card project-card">
+                        <div class="project-preview">
+                            <img src="../assets/images/event-core-kitchen-ui.webp"
+                                alt="Event Core kitchen calendar showing the weekly view with a column per day, Shabbos highlighted, and controls for adding kitchen events and managing workers"
+                                loading="lazy" decoding="async">
+                        </div>
+                        <h3>Kitchen Calendar</h3>
+                        <p>Weekly kitchen production view with a column per day, Today and Shabbos highlighting,
+                            quick-add kitchen events, worker management, and a filter to show only the signed-in
+                            staff member's assigned items.</p>
+                    </article>
+
+                    <article class="card project-card">
+                        <div class="project-preview">
+                            <img src="../assets/images/event-core-menu-ui.webp"
+                                alt="Event Core menu module showing the menu library grid with food items, category badges, search, and tabs for packages, buffet, plated, drinks, and add-ons"
+                                loading="lazy" decoding="async">
+                        </div>
+                        <h3>Menu Library</h3>
+                        <p>Menu management with a searchable item library, category badges, bulk upload, and
+                            separate tabs for packages, buffet, plated, and drink menus plus add-ons, feeding the
+                            kitchen-only production jobs.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section project-detail">
+            <div class="container reveal-on-scroll">
+                <h2>Tech Stack</h2>
+                <div class="cards project-gallery">
+                    <article class="card project-card">
+                        <h3>Frontend</h3>
+                        <p>Next.js and React with TypeScript, styled with Tailwind CSS in a component-based
+                            architecture. Responsive layouts for desktop dashboards and mobile use on the floor.</p>
+                    </article>
+                    <article class="card project-card">
+                        <h3>Backend &amp; Data</h3>
+                        <p>Supabase with PostgreSQL for authentication, persistence, and role-aware data access.
+                            CRUD workflows, forms, and operational management screens backed by real database
+                            state.</p>
+                    </article>
+                    <article class="card project-card">
+                        <h3>Testing &amp; Delivery</h3>
+                        <p>Playwright end-to-end tests for mutation and persistence flows; Git/GitHub branching and
+                            pull requests; hosted deployments on Vercel and Netlify.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; <span id="year"></span> CJ Duot</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="module" src="../js/main.js"></script>
+</body>
+
+</html>
