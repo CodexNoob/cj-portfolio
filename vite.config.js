@@ -3,6 +3,7 @@ import { defineConfig } from 'vite';
 
 export default defineConfig({
   build: {
+    chunkSizeWarningLimit: 850,
     rollupOptions: {
       input: {
         main: resolve(__dirname, 'index.html'),

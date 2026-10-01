@@ -221,12 +221,12 @@ window.addEventListener('DOMContentLoaded', () => {
   // Typing effect
   const typingEl = document.querySelector('.typing');
   const phrases = [
-    'AI-Assisted Full-Stack Web Developer',
+    'Full-Stack Web Developer',
     'Next.js | React | TypeScript | Tailwind CSS',
     'Supabase | PostgreSQL | Auth | CRUD workflows',
     'Building Event Core: hall & event management SaaS',
     'Playwright testing | Git/GitHub | Vercel | Netlify',
-    'ChatGPT | Codex | Claude | Base44 — validated by hand',
+    'AI tooling when useful, engineering judgment always',
     'BSIT Graduate | Open to full-stack & frontend roles'
   ];
   let i = 0, j = 0, deleting = false;
@@ -250,6 +250,147 @@ window.addEventListener('DOMContentLoaded', () => {
     setTimeout(tick, deleting ? speed.erase : speed.type);
   }
   if (typingEl) { tick(); }
+
+  // Subtle 3D hero tilt
+  const heroStage = document.querySelector('[data-tilt-card]');
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (heroStage && !reduceMotion) {
+    const resetTilt = () => {
+      heroStage.style.setProperty('--tilt-x', '0deg');
+      heroStage.style.setProperty('--tilt-y', '0deg');
+      heroStage.style.setProperty('--pointer-x', '50%');
+      heroStage.style.setProperty('--pointer-y', '50%');
+    };
+
+    heroStage.addEventListener('pointermove', (event) => {
+      const rect = heroStage.getBoundingClientRect();
+      const x = (event.clientX - rect.left) / rect.width;
+      const y = (event.clientY - rect.top) / rect.height;
+      heroStage.style.setProperty('--tilt-x', `${(0.5 - y) * 10}deg`);
+      heroStage.style.setProperty('--tilt-y', `${(x - 0.5) * 12}deg`);
+      heroStage.style.setProperty('--pointer-x', `${x * 100}%`);
+      heroStage.style.setProperty('--pointer-y', `${y * 100}%`);
+    });
+
+    heroStage.addEventListener('pointerleave', resetTilt);
+    heroStage.addEventListener('blur', resetTilt, true);
+  }
+
+  // Animated Three.js hero depth layer
+  const heroCanvas = document.querySelector('.hero-three');
+  const heroSection = document.querySelector('.hero.section');
+  if (heroCanvas && heroSection) {
+    import('three').then((THREE) => {
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(45, 1, 0.1, 100);
+    camera.position.set(0, 0, 9);
+
+    const renderer = new THREE.WebGLRenderer({
+      canvas: heroCanvas,
+      alpha: true,
+      antialias: true
+    });
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 1.8));
+
+    const group = new THREE.Group();
+    scene.add(group);
+
+    const teal = new THREE.Color('#2dd4bf');
+    const sky = new THREE.Color('#38bdf8');
+    const amber = new THREE.Color('#f59e0b');
+
+    const nodeMaterial = new THREE.MeshBasicMaterial({
+      color: teal,
+      transparent: true,
+      opacity: 0.7
+    });
+    const accentMaterial = new THREE.MeshBasicMaterial({
+      color: amber,
+      transparent: true,
+      opacity: 0.72
+    });
+    const lineMaterial = new THREE.LineBasicMaterial({
+      color: sky,
+      transparent: true,
+      opacity: 0.34
+    });
+
+    const geometry = new THREE.IcosahedronGeometry(0.08, 1);
+    const nodes = [];
+    const positions = [
+      [-3.6, 1.5, -0.2], [-2.4, 0.7, 0.8], [-1.1, 1.8, -0.7], [0.2, 0.9, 0.4],
+      [1.3, 1.7, -0.5], [2.7, 0.8, 0.6], [3.7, 1.4, -0.2], [-3.1, -0.8, 0.5],
+      [-1.7, -1.6, -0.3], [-0.2, -0.8, 0.9], [1.5, -1.5, -0.4], [3.0, -0.7, 0.6]
+    ];
+
+    positions.forEach((position, index) => {
+      const material = index % 5 === 0 ? accentMaterial : nodeMaterial;
+      const node = new THREE.Mesh(geometry, material);
+      node.position.set(position[0], position[1], position[2]);
+      node.userData.base = node.position.clone();
+      node.userData.phase = index * 0.45;
+      group.add(node);
+      nodes.push(node);
+    });
+
+    for (let index = 0; index < nodes.length - 1; index += 1) {
+      const lineGeometry = new THREE.BufferGeometry().setFromPoints([
+        nodes[index].position,
+        nodes[index + 1].position
+      ]);
+      const line = new THREE.Line(lineGeometry, lineMaterial);
+      group.add(line);
+    }
+
+    const ring = new THREE.Mesh(
+      new THREE.TorusGeometry(2.45, 0.012, 12, 96),
+      new THREE.MeshBasicMaterial({ color: sky, transparent: true, opacity: 0.18 })
+    );
+    ring.rotation.set(Math.PI / 2.7, 0.2, -0.2);
+    group.add(ring);
+
+    const resizeScene = () => {
+      const rect = heroSection.getBoundingClientRect();
+      const width = Math.max(rect.width, 1);
+      const height = Math.max(rect.height, 1);
+      renderer.setSize(width, height, false);
+      camera.aspect = width / height;
+      camera.updateProjectionMatrix();
+    };
+
+    let frameId = 0;
+    const renderScene = (time = 0) => {
+      const seconds = time * 0.001;
+      nodes.forEach((node) => {
+        node.position.y = node.userData.base.y + Math.sin(seconds + node.userData.phase) * 0.12;
+        node.rotation.x = seconds * 0.7;
+        node.rotation.y = seconds * 0.55;
+      });
+      group.rotation.y = Math.sin(seconds * 0.28) * 0.12;
+      group.rotation.x = Math.cos(seconds * 0.24) * 0.06;
+      ring.rotation.z = seconds * 0.18;
+      renderer.render(scene, camera);
+      if (!reduceMotion) {
+        frameId = requestAnimationFrame(renderScene);
+      }
+    };
+
+    resizeScene();
+    renderScene();
+    window.addEventListener('resize', resizeScene);
+    window.addEventListener('beforeunload', () => {
+      cancelAnimationFrame(frameId);
+      geometry.dispose();
+      nodeMaterial.dispose();
+      accentMaterial.dispose();
+      lineMaterial.dispose();
+      renderer.dispose();
+    });
+    }).catch((error) => {
+      console.warn('Hero 3D scene could not be loaded.', error);
+    });
+  }
+
   // Scroll-triggered animations using Intersection Observer
   const initScrollAnimations = () => {
     const aboutSection = document.getElementById('about');
