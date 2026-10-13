@@ -16,6 +16,7 @@ Portfolio/
 ├─ index.html                 # main single-page portfolio
 ├─ projects/                  # one detail page per project
 │  ├─ event-core.html
+│  ├─ resumeai-builder.html
 │  ├─ lux-kitchens.html
 │  ├─ helpdesk-ticketing-system.html
 │  ├─ cj-ai-assistant.html

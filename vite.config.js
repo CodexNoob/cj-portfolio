@@ -11,6 +11,7 @@ export default defineConfig({
         eventCore: resolve(__dirname, 'projects/event-core.html'),
         helpdeskTicketingSystem: resolve(__dirname, 'projects/helpdesk-ticketing-system.html'),
         luxKitchens: resolve(__dirname, 'projects/lux-kitchens.html'),
+        resumeaiBuilder: resolve(__dirname, 'projects/resumeai-builder.html'),
         starlegendsRodriguez: resolve(__dirname, 'projects/starlegends-rodriguez.html'),
       },
     },

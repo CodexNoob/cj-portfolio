@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ResumeAI Builder - Project | Charles John Duot</title>
+    <meta name="description"
+        content="ResumeAI Builder project details: a Next.js and Supabase resume builder with Google sign-in, a live PDF preview, ten resume formats, AI reviews and writing suggestions, and database-enforced usage limits." />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/devicon.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div class="bg-anim" aria-hidden="true">
+        <span class="blob b1"></span>
+        <span class="blob b2"></span>
+        <span class="blob b3"></span>
+        <span class="blob b4"></span>
+    </div>
+    <div class="bg-tech" aria-hidden="true"></div>
+
+    <header class="site-header">
+        <div class="container nav">
+            <a class="logo" href="../index.html">C<span>J</span></a>
+            <button class="nav-toggle" type="button" aria-label="Toggle menu" aria-expanded="false">
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+            <nav class="nav-menu" aria-label="Primary">
+                <a href="../index.html#about" target="_self">About</a>
+                <a href="../index.html#skills" target="_self">Skills & Tools</a>
+                <a href="../index.html#projects" target="_self">Projects</a>
+                <a href="../index.html#experience" target="_self">Experience</a>
+                <a href="../index.html#education" target="_self">Education & Certifications</a>
+                <a href="../index.html#contact" target="_self">Contact</a>
+                <button class="theme-toggle" aria-label="Switch to light mode" title="Switch to light mode"
+                    type="button">
+                    <i class="fas fa-sun" aria-hidden="true"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main">
+        <section class="section project-hero">
+            <div class="container grid-2 reveal-on-scroll">
+                <div class="project-copy">
+                    <a href="../index.html#projects" class="btn project-back"
+                        aria-label="Back to projects">&larr; Projects</a>
+                    <h1 class="project-title">ResumeAI Builder</h1>
+                    <p class="kicker">An AI-assisted resume builder with a live PDF preview and honest, reviewable
+                        suggestions.</p>
+                    <p class="muted">ResumeAI is a Next.js and Supabase application for writing and refining resumes.
+                        Users sign in with Google, edit their resume section by section, and watch a paginated PDF
+                        preview update as they type. Changes save automatically, and the same document renders the
+                        downloadable PDF with selectable text and clickable links.</p>
+                    <p class="muted">AI features run on the server through the Gemini API. Reviews score every resume
+                        section, compare the resume with an optional job description, and suggest edits that are only
+                        applied after the user accepts them one at a time.</p>
+
+                    <div class="tags project-tags">
+                        <span>Next.js</span>
+                        <span>TypeScript</span>
+                        <span>Supabase Auth</span>
+                        <span>Row Level Security</span>
+                        <span>Gemini API</span>
+                        <span>Playwright</span>
+                    </div>
+
+                    <div class="cta project-cta">
+                        <a class="btn primary" href="https://resume-ai-builder-charles-projects-fb9ef31b.vercel.app/"
+                            target="_blank" rel="noopener">Open Live Preview</a>
+                        <a class="btn btn-gap" href="#features">View Features</a>
+                        <a class="btn btn-gap" href="#database">Database Design</a>
+                    </div>
+
+                    <h3 class="project-subhead" id="features">What's included</h3>
+                    <ul>
+                        <li>Google sign-in through Supabase, plus a no-account preview workspace with sample data.</li>
+                        <li>Section-by-section editor with autosave, section reordering and visibility, and A4 or US
+                            Letter output.</li>
+                        <li>Ten resume formats, from a single-column ATS layout to skills-first, technical, and
+                            entry-level designs.</li>
+                        <li>Live paginated PDF preview and text-based PDF export with selectable text.</li>
+                        <li>AI resume reviews, job-match suggestions, and writing improvements that users approve one at
+                            a time.</li>
+                        <li>Local PDF and DOCX import, an ATS readability check, and private job-application tracking.
+                        </li>
+                    </ul>
+
+                    <h3 class="project-subhead" id="database">Database and security</h3>
+                    <p class="muted">The Supabase schema stores profiles, resumes, AI review records, usage tracking,
+                        subscription plans, and job applications. Row Level Security keeps each user limited to their own
+                        data, while database functions enforce saved-resume caps, reserve AI usage atomically, and refund
+                        failed requests. API routes verify the signed-in user and check the request origin on every
+                        change, and AI and service keys stay on the server.</p>
+                </div>
+
+                <div class="card project-card">
+                    <div class="project-preview">
+                        <img src="../assets/images/resumeai-builder-card.webp"
+                            alt="ResumeAI landing page with a sample resume preview" loading="lazy" decoding="async">
+                    </div>
+                    <h3>Project preview</h3>
+                    <p>The preview shows the public landing page: the main call to action, template links, and a sample
+                        resume rendered in the ATS-friendly format.</p>
+                    <a class="btn small btn-accent" href="https://resume-ai-builder-charles-projects-fb9ef31b.vercel.app/"
+                        target="_blank" rel="noopener">Open Live Preview</a>
+                    <h4 class="card-subhead">Project role</h4>
+                    <p class="muted">Built as a full-stack AI product demo covering authentication, database policies
+                        and quotas, server-side AI integration, PDF generation, and browser testing with Playwright.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section project-detail">
+            <div class="container reveal-on-scroll">
+                <h2>Workspace Interface</h2>
+                <div class="cards project-gallery">
+                    <article class="card project-card">
+                        <div class="project-preview">
+                            <img src="../assets/images/resumeai-builder-dashboard-ui.webp"
+                                alt="ResumeAI workspace overview with saved resume count, weekly AI reviews, and the resume list"
+                                loading="lazy" decoding="async">
+                        </div>
+                        <h3>Workspace Dashboard</h3>
+                        <p>The workspace users land in after signing in: saved resumes against the plan limit, AI reviews
+                            left this week, a resume list with search, sorting, scores, and status, plus navigation to the
+                            builder, AI resume check, templates, and application tracking.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; <span id="year"></span> CJ Duot</p>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="module" src="../js/main.js"></script>
+</body>
+
+</html>
