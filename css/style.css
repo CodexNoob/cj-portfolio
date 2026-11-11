@@ -1896,7 +1896,8 @@ body.modal-open .site-header {
 
 /* ---------- Project detail pages ---------- */
 .project-hero,
-.project-detail-section {
+.project-detail-section,
+.all-projects {
   padding-top: clamp(28px, 4vw, 48px);
 }
 
