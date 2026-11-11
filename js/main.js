@@ -129,12 +129,12 @@ window.addEventListener('DOMContentLoaded', () => {
     const el = document.querySelector(id);
     if (!el) return false;
 
-    const sectionInsets = {
-      '#skills': 72,
-      '#projects': 72
-    };
-    const sectionInset = sectionInsets[id] ?? (id === '#home' ? 0 : 2);
-    const targetTop = el.getBoundingClientRect().top + window.pageYOffset + sectionInset;
+    // Land the section just below the sticky header (sections have their own top padding)
+    const header = document.querySelector('.site-header');
+    const headerH = header ? header.offsetHeight : 0;
+    const targetTop = id === '#home'
+      ? 0
+      : el.getBoundingClientRect().top + window.pageYOffset - headerH + 24;
     window.scrollTo({ top: targetTop, behavior });
     return true;
   };
@@ -295,24 +295,37 @@ window.addEventListener('DOMContentLoaded', () => {
     const group = new THREE.Group();
     scene.add(group);
 
-    const teal = new THREE.Color('#2dd4bf');
-    const sky = new THREE.Color('#38bdf8');
-    const amber = new THREE.Color('#f59e0b');
+    // Dark theme: everything white. Light theme: teal / blue / amber.
+    const PALETTES = {
+      dark: { node: '#f5f5f5', accent: '#ffffff', line: '#f5f5f5', ring: '#f5f5f5' },
+      light: { node: '#0f766e', accent: '#f59e0b', line: '#2563eb', ring: '#2563eb' }
+    };
+    const readPalette = () => {
+      const theme = document.documentElement.getAttribute('data-theme') === 'light' ? 'light' : 'dark';
+      const p = PALETTES[theme];
+      return {
+        node: new THREE.Color(p.node),
+        accent: new THREE.Color(p.accent),
+        line: new THREE.Color(p.line),
+        ring: new THREE.Color(p.ring)
+      };
+    };
+    const initial = readPalette();
 
     const nodeMaterial = new THREE.MeshBasicMaterial({
-      color: teal,
+      color: initial.node,
       transparent: true,
-      opacity: 0.7
+      opacity: 0.6
     });
     const accentMaterial = new THREE.MeshBasicMaterial({
-      color: amber,
+      color: initial.accent,
       transparent: true,
-      opacity: 0.72
+      opacity: 0.85
     });
     const lineMaterial = new THREE.LineBasicMaterial({
-      color: sky,
+      color: initial.line,
       transparent: true,
-      opacity: 0.34
+      opacity: 0.25
     });
 
     const geometry = new THREE.IcosahedronGeometry(0.08, 1);
@@ -342,12 +355,27 @@ window.addEventListener('DOMContentLoaded', () => {
       group.add(line);
     }
 
+    const ringMaterial = new THREE.MeshBasicMaterial({ color: initial.ring, transparent: true, opacity: 0.16 });
     const ring = new THREE.Mesh(
       new THREE.TorusGeometry(2.45, 0.012, 12, 96),
-      new THREE.MeshBasicMaterial({ color: sky, transparent: true, opacity: 0.18 })
+      ringMaterial
     );
     ring.rotation.set(Math.PI / 2.7, 0.2, -0.2);
     group.add(ring);
+
+    // Re-tint when the light/dark theme changes
+    const applyInk = () => {
+      const p = readPalette();
+      nodeMaterial.color.copy(p.node);
+      accentMaterial.color.copy(p.accent);
+      lineMaterial.color.copy(p.line);
+      ringMaterial.color.copy(p.ring);
+      if (reduceMotion) renderer.render(scene, camera);
+    };
+    new MutationObserver(applyInk).observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ['data-theme']
+    });
 
     const resizeScene = () => {
       const rect = heroSection.getBoundingClientRect();
@@ -384,6 +412,7 @@ window.addEventListener('DOMContentLoaded', () => {
       nodeMaterial.dispose();
       accentMaterial.dispose();
       lineMaterial.dispose();
+      ringMaterial.dispose();
       renderer.dispose();
     });
     }).catch((error) => {
@@ -495,15 +524,7 @@ window.addEventListener('DOMContentLoaded', () => {
     if (hasEmailJsConfig) {
       initContactForm();
     }
-
-    // Make sure all sections are visible
-    document.querySelectorAll('section').forEach(section => {
-      section.style.display = 'block';
-    });
   }
-
-  // Re-initialize on window resize in case of layout changes
-  window.addEventListener('resize', initScrollAnimations);
 
   // Contact Form Handling
   function initContactForm() {
