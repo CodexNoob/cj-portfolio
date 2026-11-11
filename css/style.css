@@ -277,21 +277,90 @@ strong {
   gap: 16px;
 }
 
-.logo {
-  font-size: 1.35rem;
-  font-weight: 900;
-  letter-spacing: -0.02em;
-  text-decoration: none;
-  color: var(--text);
+/* Logo: ribbon "C" mark with </> + "Charles" wordmark + tagline.
+   Colors come from tokens so the SVG follows the theme:
+   dark = white/gray only, light = navy + blue (brand colors). */
+:root {
+  --logo-body-a: #ffffff;
+  --logo-body-b: #d4d4d4;
+  --logo-fold-a: #5c5c5c;
+  --logo-fold-b: #b8b8b8;
+  --logo-code: #ffffff;
 }
 
-.logo span {
-  display: inline-block;
-  margin-left: 1px;
-  padding: 0 4px;
-  border-radius: 4px;
-  background: var(--ink);
-  color: var(--on-ink);
+[data-theme="light"] {
+  --logo-body-a: #0f172a;
+  --logo-body-b: #1e3a8a;
+  --logo-fold-a: #1d4ed8;
+  --logo-fold-b: #3b82f6;
+  --logo-code: #1d6ff2;
+}
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: var(--text);
+  line-height: 1;
+}
+
+.logo-mark {
+  display: block;
+  width: auto;
+  height: 38px;
+  flex-shrink: 0;
+  overflow: visible;
+  transition: transform 0.4s var(--ease);
+}
+
+.logo-mark .lg-body-a { stop-color: var(--logo-body-a); }
+.logo-mark .lg-body-b { stop-color: var(--logo-body-b); }
+.logo-mark .lg-fold-a { stop-color: var(--logo-fold-a); }
+.logo-mark .lg-fold-b { stop-color: var(--logo-fold-b); }
+.logo-mark .logo-fold-inner { fill: var(--logo-fold-a); }
+.logo-mark .logo-code { stroke: var(--logo-code); }
+
+.logo-type {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.logo-text {
+  font-family: Poppins, "Segoe UI", Inter, system-ui, sans-serif;
+  font-size: 1.32rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.logo-tag {
+  font-family: Poppins, "Segoe UI", Inter, system-ui, sans-serif;
+  font-size: 0.5rem;
+  font-weight: 500;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+.logo:hover .logo-mark,
+.logo:focus-visible .logo-mark {
+  transform: rotate(-6deg) scale(1.05);
+}
+
+@media (max-width: 560px) {
+  .logo-mark {
+    height: 32px;
+  }
+
+  .logo-text {
+    font-size: 1.15rem;
+  }
+
+  .logo-tag {
+    display: none;
+  }
 }
 
 .nav-menu {
@@ -1047,6 +1116,22 @@ strong {
 .project-card {
   position: relative;
   overflow: hidden;
+}
+
+.projects-more {
+  display: flex;
+  justify-content: center;
+  margin-top: 28px;
+}
+
+.all-projects-intro {
+  max-width: 640px;
+  margin: 8px 0 32px;
+}
+
+.projects-more .btn i {
+  margin-left: 8px;
+  font-size: 0.8em;
 }
 
 .project-card:hover,
@@ -2009,10 +2094,6 @@ body.modal-open .site-header {
   border-color: transparent;
   color: #ffffff;
   box-shadow: 0 10px 24px rgba(15, 118, 110, 0.22);
-}
-
-[data-theme="light"] .logo span {
-  background: linear-gradient(135deg, var(--accent), var(--accent-2));
 }
 
 [data-theme="light"] .eyebrow {

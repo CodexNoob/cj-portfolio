@@ -8,7 +8,9 @@ export default defineConfig({
       input: {
         main: resolve(__dirname, 'index.html'),
         cjAiAssistant: resolve(__dirname, 'projects/cj-ai-assistant.html'),
-        eventCore: resolve(__dirname, 'projects/event-core.html'),
+        allProjects: resolve(__dirname, 'projects/index.html'),
+        devpilot:resolve(__dirname, 'projects/devpilot.html'),
+        eventCore:resolve(__dirname, 'projects/event-core.html'),
         helpdeskTicketingSystem: resolve(__dirname, 'projects/helpdesk-ticketing-system.html'),
         luxKitchens: resolve(__dirname, 'projects/lux-kitchens.html'),
         resumeaiBuilder: resolve(__dirname, 'projects/resumeai-builder.html'),

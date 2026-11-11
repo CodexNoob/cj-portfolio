@@ -1,5 +1,31 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <rect width="64" height="64" rx="14" fill="#0a0a0a"/>
-  <rect x="1.5" y="1.5" width="61" height="61" rx="12.5" fill="none" stroke="#ffffff" stroke-opacity="0.35" stroke-width="2"/>
-  <text x="32" y="43" text-anchor="middle" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="30" font-weight="800" letter-spacing="1" fill="#ffffff">CJ</text>
+  <defs>
+    <linearGradient id="b" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="0.6" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#c7d7fe"/>
+    </linearGradient>
+    <linearGradient id="t" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0"/>
+      <stop offset="0.55" stop-color="#3b82f6"/>
+      <stop offset="1" stop-color="#1d4ed8"/>
+    </linearGradient>
+    <linearGradient id="f" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#1d4ed8"/>
+      <stop offset="0.45" stop-color="#3b82f6"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="14" fill="#05070d"/>
+  <svg x="6" y="12" width="52" height="40" viewBox="596 215 434 322">
+    <path fill="url(#b)" d="M700 225 L905 225 C933 225 950 238 965 262 L1022 360 L936 360 C924 326 904 290 868 290 L680 290 A85 85 0 0 0 680 460 L858 460 C880 460 893 450 905 436 L932 405 L1022 405 L952 488 C930 512 900 525 858 525 L700 525 A150 150 0 0 1 700 225 Z"/>
+    <path fill="url(#t)" d="M780 225 L905 225 C933 225 950 238 965 262 L1022 360 L936 360 C924 326 904 290 868 290 L780 290 Z"/>
+    <path fill="#1d4ed8" opacity="0.9" d="M872 291 C920 297 985 330 1022 360 L936 360 C926 330 906 297 872 291 Z"/>
+    <path fill="url(#f)" d="M604 530 L688 461 L870 461 L870 525 L640 525 Z"/>
+    <g fill="none" stroke="#1d6ff2" stroke-width="18" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="712,348 667,377 712,406"/>
+      <line x1="790" y1="330" x2="748" y2="426"/>
+      <polyline points="826,348 871,377 826,406"/>
+    </g>
+  </svg>
 </svg>

@@ -4,13 +4,17 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script>(function(){try{var t=localStorage.getItem("theme");if(t!=="light"&&t!=="dark"){t=window.matchMedia&&matchMedia("(prefers-color-scheme: light)").matches?"light":"dark"}document.documentElement.setAttribute("data-theme",t)}catch(e){}})();</script>
     <title>HelpDesk Ticketing System - Project | Charles John Duot</title>
     <meta name="description"
         content="HelpDesk Ticketing System project details: a React and Supabase support ticketing app with role-based dashboards, ticket queues, comments, attachments, and admin approvals." />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/devicon.min.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="../css/style.css">
 </head>
 
@@ -26,7 +30,40 @@
 
     <header class="site-header">
         <div class="container nav">
-            <a class="logo" href="../index.html">Charles</a>
+            <a class="logo" href="../index.html" aria-label="Charles, Full-Stack Developer - home">
+        <svg class="logo-mark" viewBox="596 215 434 322" aria-hidden="true" focusable="false">
+          <defs>
+            <linearGradient id="logoBody" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0" class="lg-body-a" />
+              <stop offset="0.6" class="lg-body-a" />
+              <stop offset="1" class="lg-body-b" />
+            </linearGradient>
+            <linearGradient id="logoFoldTop" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" class="lg-body-a" stop-opacity="0" />
+              <stop offset="0.55" class="lg-fold-b" />
+              <stop offset="1" class="lg-fold-a" />
+            </linearGradient>
+            <linearGradient id="logoFoldBottom" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0" class="lg-fold-a" />
+              <stop offset="0.45" class="lg-fold-b" />
+              <stop offset="1" class="lg-body-a" stop-opacity="0" />
+            </linearGradient>
+          </defs>
+          <path fill="url(#logoBody)" d="M700 225 L905 225 C933 225 950 238 965 262 L1022 360 L936 360 C924 326 904 290 868 290 L680 290 A85 85 0 0 0 680 460 L858 460 C880 460 893 450 905 436 L932 405 L1022 405 L952 488 C930 512 900 525 858 525 L700 525 A150 150 0 0 1 700 225 Z" />
+          <path fill="url(#logoFoldTop)" d="M780 225 L905 225 C933 225 950 238 965 262 L1022 360 L936 360 C924 326 904 290 868 290 L780 290 Z" />
+          <path class="logo-fold-inner" opacity="0.9" d="M872 291 C920 297 985 330 1022 360 L936 360 C926 330 906 297 872 291 Z" />
+          <path fill="url(#logoFoldBottom)" d="M604 530 L688 461 L870 461 L870 525 L640 525 Z" />
+          <g class="logo-code" fill="none" stroke-width="15" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="712,348 667,377 712,406" />
+            <line x1="790" y1="330" x2="748" y2="426" />
+            <polyline points="826,348 871,377 826,406" />
+          </g>
+        </svg>
+        <span class="logo-type">
+          <span class="logo-text">Charles</span>
+          <span class="logo-tag">Full-Stack Developer</span>
+        </span>
+      </a>
             <button class="nav-toggle" type="button" aria-label="Toggle menu" aria-expanded="false">
                 <span class="bar"></span>
                 <span class="bar"></span>

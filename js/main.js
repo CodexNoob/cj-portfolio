@@ -1,13 +1,4 @@
-// Theme toggle with persistence
-(function () {
-  const root = document.documentElement;
-  const stored = localStorage.getItem('theme');
-  if (stored) {
-    root.setAttribute('data-theme', stored);
-  } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
-    root.setAttribute('data-theme', 'light');
-  }
-})();
+// Initial theme is set by an inline script in each page's <head> (before first paint).
 
 window.addEventListener('DOMContentLoaded', () => {
   // Year
@@ -167,7 +158,7 @@ window.addEventListener('DOMContentLoaded', () => {
   const themeBtn = document.querySelector('.theme-toggle');
 
   // Function to set theme
-  const setTheme = (theme) => {
+  const setTheme = (theme, persist = true) => {
     document.documentElement.setAttribute('data-theme', theme);
     if (themeBtn) {
       const nextLabel = theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode';
@@ -177,16 +168,15 @@ window.addEventListener('DOMContentLoaded', () => {
       themeBtn.setAttribute('aria-label', nextLabel);
       themeBtn.setAttribute('title', nextLabel);
     }
-    localStorage.setItem('theme', theme);
+    if (persist) {
+      try { localStorage.setItem('theme', theme); } catch (e) { /* storage blocked */ }
+    }
   };
 
-  // Check for saved theme preference or use system preference
-  const savedTheme = localStorage.getItem('theme');
-  const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-  const initialTheme = savedTheme || (systemPrefersDark ? 'dark' : 'light');
-
-  // Set initial theme
-  setTheme(initialTheme);
+  // The inline <head> script already applied the saved/system theme before first paint;
+  // just sync the toggle button to it without overwriting the saved preference.
+  const initialTheme = document.documentElement.getAttribute('data-theme') === 'light' ? 'light' : 'dark';
+  setTheme(initialTheme, false);
 
   // Toggle theme on button click
   if (themeBtn) {
