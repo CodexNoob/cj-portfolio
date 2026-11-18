@@ -9,6 +9,7 @@ export default defineConfig({
         main: resolve(__dirname, 'index.html'),
         cjAiAssistant: resolve(__dirname, 'projects/cj-ai-assistant.html'),
         allProjects: resolve(__dirname, 'projects/index.html'),
+        personalCrm: resolve(__dirname, 'projects/personal-crm.html'),
         devpilot:resolve(__dirname, 'projects/devpilot.html'),
         eventCore:resolve(__dirname, 'projects/event-core.html'),
         helpdeskTicketingSystem: resolve(__dirname, 'projects/helpdesk-ticketing-system.html'),
