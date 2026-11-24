@@ -827,7 +827,7 @@
         document.body.classList.add('modal-open');
         modal.setAttribute('aria-hidden', 'false');
         // set iframe src lazily to avoid preloading large PDF
-        const src = encodeURI('assets/Charles_John_Duot_Resume.pdf');
+        const src = encodeURI('assets/Charles_John_Duot.pdf');
         iframe.src = src;
         if (downloadLink) downloadLink.href = src;
         closeBtn.focus();
