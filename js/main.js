@@ -2,15 +2,18 @@
 
 window.addEventListener('DOMContentLoaded', () => {
   // Load the immersive backdrop once the first frame is ready, without blocking the page.
-  const cinematicCanvas = document.querySelector('.cinematic-canvas');
-  if (cinematicCanvas) {
+  const cinematicCanvases = Array.from(document.querySelectorAll('.cinematic-canvas'));
+  if (cinematicCanvases.length) {
     const startCinematic = () => {
-      import('./cinematic.js')
+      import('./cinematic-scenes.js')
         .then(({ initCinematicStage }) => {
-          initCinematicStage(cinematicCanvas);
           document.body.classList.add('cinematic-ready');
+          window.cinematicSceneCleanup = initCinematicStage(cinematicCanvases);
         })
-        .catch(() => cinematicCanvas.remove());
+        .catch(() => {
+          document.body.classList.remove('cinematic-ready');
+          cinematicCanvases.forEach((canvas) => canvas.remove());
+        });
     };
     if ('requestIdleCallback' in window) window.requestIdleCallback(startCinematic, { timeout: 1800 });
     else window.setTimeout(startCinematic, 250);

@@ -265,8 +265,6 @@ strong {
   height: var(--header-h);
   background: var(--header-bg);
   border-bottom: 1px solid var(--stroke);
-  -webkit-backdrop-filter: saturate(140%) blur(12px);
-  backdrop-filter: saturate(140%) blur(12px);
 }
 
 .nav {
@@ -798,77 +796,62 @@ strong {
 
 /* Scroll-driven 3D stage: the scene is one continuous backdrop beneath the page copy. */
 .cinematic-canvas {
-  position: fixed;
-  inset: 0;
+  position: sticky;
+  top: 0;
   z-index: 0;
   display: block;
   width: 100%;
-  height: 100%;
-  opacity: 0;
+  height: 100svh;
+  margin-bottom: -100svh;
+  opacity: 1;
   pointer-events: none;
-  mix-blend-mode: screen;
-  transition: opacity 900ms ease;
+  mix-blend-mode: normal;
+  filter: none;
 }
 
-body.cinematic-ready .cinematic-canvas {
-  opacity: 0.68;
-}
-
-body.cinematic-ready .bg-tech {
-  opacity: 0.14;
-}
-
-body.cinematic-ready main > .section {
+.hero.section,
+#about,
+#projects,
+#contact {
   position: relative;
-  z-index: 1;
+  isolation: isolate;
+}
+
+body.cinematic-ready .hero.section,
+body.cinematic-ready #about,
+body.cinematic-ready #projects,
+body.cinematic-ready #contact {
+  min-height: 100svh;
   background: transparent;
 }
 
-body.cinematic-ready .hero-copy,
-body.cinematic-ready .about-copy,
-body.cinematic-ready .project-card,
-body.cinematic-ready .skill-group,
-body.cinematic-ready .timeline-item,
-body.cinematic-ready .contact-info,
-body.cinematic-ready .contact-form-container {
-  backdrop-filter: blur(10px);
+#about .container,
+#projects .container,
+#contact .container,
+.hero .container {
+  position: relative;
+  z-index: 1;
 }
 
-html:not([data-theme="light"]) body.cinematic-ready .project-card,
-html:not([data-theme="light"]) body.cinematic-ready .skill-group,
-html:not([data-theme="light"]) body.cinematic-ready .timeline-item,
-html:not([data-theme="light"]) body.cinematic-ready .contact-info,
-html:not([data-theme="light"]) body.cinematic-ready .contact-form-container {
-  background-color: rgba(10, 16, 23, 0.76);
-  border-color: rgba(183, 217, 232, 0.2);
+#about .cinematic-canvas,
+#projects .cinematic-canvas,
+#contact .cinematic-canvas {
+  position: sticky;
+  margin-bottom: -100svh;
 }
 
-html[data-theme="light"] body.cinematic-ready .project-card,
-html[data-theme="light"] body.cinematic-ready .skill-group,
-html[data-theme="light"] body.cinematic-ready .timeline-item,
-html[data-theme="light"] body.cinematic-ready .contact-info,
-html[data-theme="light"] body.cinematic-ready .contact-form-container {
-  background-color: rgba(249, 251, 252, 0.82);
+.hero .cinematic-canvas {
+  margin-bottom: -100svh;
 }
 
-html[data-theme="light"] body.cinematic-ready .cinematic-canvas {
-  mix-blend-mode: multiply;
-  opacity: 0.3;
+#contact .contact-form-container,
+#contact .contact-info {
+  backdrop-filter: none;
+  filter: none;
 }
 
 @media (max-width: 700px) {
-  body.cinematic-ready .cinematic-canvas { opacity: 0.43; }
-  body.cinematic-ready .hero-copy,
-  body.cinematic-ready .about-copy,
-  body.cinematic-ready .project-card,
-  body.cinematic-ready .skill-group,
-  body.cinematic-ready .timeline-item,
-  body.cinematic-ready .contact-info,
-  body.cinematic-ready .contact-form-container { backdrop-filter: blur(6px); }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .cinematic-canvas { transition: none; }
+  .cinematic-canvas { height: 78svh; margin-bottom: -78svh; }
 }
 
 .hero-stage:hover .hero-profile-image {
