@@ -1,6 +1,21 @@
 // Initial theme is set by an inline script in each page's <head> (before first paint).
 
 window.addEventListener('DOMContentLoaded', () => {
+  // Load the immersive backdrop once the first frame is ready, without blocking the page.
+  const cinematicCanvas = document.querySelector('.cinematic-canvas');
+  if (cinematicCanvas) {
+    const startCinematic = () => {
+      import('./cinematic.js')
+        .then(({ initCinematicStage }) => {
+          initCinematicStage(cinematicCanvas);
+          document.body.classList.add('cinematic-ready');
+        })
+        .catch(() => cinematicCanvas.remove());
+    };
+    if ('requestIdleCallback' in window) window.requestIdleCallback(startCinematic, { timeout: 1800 });
+    else window.setTimeout(startCinematic, 250);
+  }
+
   // Year
   const yearEl = document.getElementById('year');
   if (yearEl) { yearEl.textContent = new Date().getFullYear(); }

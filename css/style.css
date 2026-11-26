@@ -796,6 +796,81 @@ strong {
   transition: filter 0.5s ease;
 }
 
+/* Scroll-driven 3D stage: the scene is one continuous backdrop beneath the page copy. */
+.cinematic-canvas {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  pointer-events: none;
+  mix-blend-mode: screen;
+  transition: opacity 900ms ease;
+}
+
+body.cinematic-ready .cinematic-canvas {
+  opacity: 0.68;
+}
+
+body.cinematic-ready .bg-tech {
+  opacity: 0.14;
+}
+
+body.cinematic-ready main > .section {
+  position: relative;
+  z-index: 1;
+  background: transparent;
+}
+
+body.cinematic-ready .hero-copy,
+body.cinematic-ready .about-copy,
+body.cinematic-ready .project-card,
+body.cinematic-ready .skill-group,
+body.cinematic-ready .timeline-item,
+body.cinematic-ready .contact-info,
+body.cinematic-ready .contact-form-container {
+  backdrop-filter: blur(10px);
+}
+
+html:not([data-theme="light"]) body.cinematic-ready .project-card,
+html:not([data-theme="light"]) body.cinematic-ready .skill-group,
+html:not([data-theme="light"]) body.cinematic-ready .timeline-item,
+html:not([data-theme="light"]) body.cinematic-ready .contact-info,
+html:not([data-theme="light"]) body.cinematic-ready .contact-form-container {
+  background-color: rgba(10, 16, 23, 0.76);
+  border-color: rgba(183, 217, 232, 0.2);
+}
+
+html[data-theme="light"] body.cinematic-ready .project-card,
+html[data-theme="light"] body.cinematic-ready .skill-group,
+html[data-theme="light"] body.cinematic-ready .timeline-item,
+html[data-theme="light"] body.cinematic-ready .contact-info,
+html[data-theme="light"] body.cinematic-ready .contact-form-container {
+  background-color: rgba(249, 251, 252, 0.82);
+}
+
+html[data-theme="light"] body.cinematic-ready .cinematic-canvas {
+  mix-blend-mode: multiply;
+  opacity: 0.3;
+}
+
+@media (max-width: 700px) {
+  body.cinematic-ready .cinematic-canvas { opacity: 0.43; }
+  body.cinematic-ready .hero-copy,
+  body.cinematic-ready .about-copy,
+  body.cinematic-ready .project-card,
+  body.cinematic-ready .skill-group,
+  body.cinematic-ready .timeline-item,
+  body.cinematic-ready .contact-info,
+  body.cinematic-ready .contact-form-container { backdrop-filter: blur(6px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cinematic-canvas { transition: none; }
+}
+
 .hero-stage:hover .hero-profile-image {
   filter: var(--img-filter-hover);
 }
