@@ -1,7 +1,6 @@
 // Initial theme is set by an inline script in each page's <head> (before first paint).
 
 window.addEventListener('DOMContentLoaded', () => {
-  // Load the immersive backdrop once the first frame is ready, without blocking the page.
   const cinematicCanvases = Array.from(document.querySelectorAll('.cinematic-canvas'));
   if (cinematicCanvases.length) {
     const startCinematic = () => {
@@ -114,23 +113,6 @@ window.addEventListener('DOMContentLoaded', () => {
   const navToggle = document.querySelector('.nav-toggle');
   const navMenu = document.querySelector('.nav-menu');
   const navClose = document.querySelector('.nav-close');
-  const copyEmailButton = document.getElementById('copy-email');
-  if (copyEmailButton) {
-    copyEmailButton.addEventListener('click', async () => {
-      const emailLink = document.querySelector('a[href^="mailto:"]');
-      const email = emailLink?.getAttribute('href')?.slice(7).split('?')[0];
-      const status = document.getElementById('copy-email-status');
-      if (!email || !status) return;
-      try {
-        await navigator.clipboard.writeText(decodeURIComponent(email));
-        status.textContent = 'Email address copied.';
-        status.className = 'form-status success';
-      } catch {
-        status.textContent = 'Copy was unavailable. Use the email contact link instead.';
-        status.className = 'form-status error';
-      }
-    });
-  }
   if (navToggle && navMenu) {
     navToggle.addEventListener('click', () => {
       const open = navMenu.classList.toggle('open');
