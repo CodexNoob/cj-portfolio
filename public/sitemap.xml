@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>__SITE_URL__/</loc></url>
+  <url><loc>__SITE_URL__/projects/</loc></url>
+  <url><loc>__SITE_URL__/projects/event-core.html</loc></url>
+  <url><loc>__SITE_URL__/projects/devpilot.html</loc></url>
+  <url><loc>__SITE_URL__/projects/resumeai-builder.html</loc></url>
+  <url><loc>__SITE_URL__/projects/personal-crm.html</loc></url>
+  <url><loc>__SITE_URL__/projects/lux-kitchens.html</loc></url>
+  <url><loc>__SITE_URL__/projects/helpdesk-ticketing-system.html</loc></url>
+  <url><loc>__SITE_URL__/projects/cj-ai-assistant.html</loc></url>
+  <url><loc>__SITE_URL__/projects/starlegends-rodriguez.html</loc></url>
+</urlset>
