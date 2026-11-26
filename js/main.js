@@ -96,6 +96,23 @@ window.addEventListener('DOMContentLoaded', () => {
   const navToggle = document.querySelector('.nav-toggle');
   const navMenu = document.querySelector('.nav-menu');
   const navClose = document.querySelector('.nav-close');
+  const copyEmailButton = document.getElementById('copy-email');
+  if (copyEmailButton) {
+    copyEmailButton.addEventListener('click', async () => {
+      const emailLink = document.querySelector('a[href^="mailto:"]');
+      const email = emailLink?.getAttribute('href')?.slice(7).split('?')[0];
+      const status = document.getElementById('copy-email-status');
+      if (!email || !status) return;
+      try {
+        await navigator.clipboard.writeText(decodeURIComponent(email));
+        status.textContent = 'Email address copied.';
+        status.className = 'form-status success';
+      } catch {
+        status.textContent = 'Copy was unavailable. Use the email contact link instead.';
+        status.className = 'form-status error';
+      }
+    });
+  }
   if (navToggle && navMenu) {
     navToggle.addEventListener('click', () => {
       const open = navMenu.classList.toggle('open');
@@ -114,6 +131,27 @@ window.addEventListener('DOMContentLoaded', () => {
         navToggle.classList.remove('open');
       });
     }
+  }
+
+  // Keep the primary navigation in sync with the section in view.
+  const sectionLinks = Array.from(document.querySelectorAll('.nav-menu a[href^="#"]'));
+  const sectionTargets = sectionLinks
+    .map((link) => document.querySelector(link.getAttribute('href')))
+    .filter(Boolean);
+  if ('IntersectionObserver' in window && sectionTargets.length) {
+    const activeSections = new Set();
+    const sectionObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) activeSections.add(entry.target.id);
+        else activeSections.delete(entry.target.id);
+      });
+      const currentId = [...activeSections].at(-1);
+      sectionLinks.forEach((link) => {
+        if (link.hash === `#${currentId}`) link.setAttribute('aria-current', 'location');
+        else link.removeAttribute('aria-current');
+      });
+    }, { rootMargin: '-25% 0px -60% 0px' });
+    sectionTargets.forEach((section) => sectionObserver.observe(section));
   }
 
   const scrollToSection = (id, behavior = 'smooth') => {
@@ -267,7 +305,7 @@ window.addEventListener('DOMContentLoaded', () => {
   }
 
   // Animated Three.js hero depth layer
-  const heroCanvas = document.querySelector('.hero-three');
+  const heroCanvas = null; // The looping Three.js hero animation is intentionally disabled.
   const heroSection = document.querySelector('.hero.section');
   if (heroCanvas && heroSection) {
     import('three').then((THREE) => {

@@ -2176,6 +2176,68 @@ body.modal-open .site-header {
   color: #ffffff;
 }
 
+/* ---------- Recruiter portfolio refinements ---------- */
+:root {
+  --page-width: 1160px;
+  --section-space: clamp(64px, 8vw, 96px);
+  --text-measure: 65ch;
+}
+
+.container {
+  width: min(var(--page-width), calc(100% - 40px));
+}
+
+body {
+  font-family: Inter, Geist, ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-size: 1rem;
+  line-height: 1.65;
+}
+
+main > .section {
+  padding-block: var(--section-space);
+}
+
+.nav-menu a[aria-current="location"] {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 6px;
+}
+
+.nav-toggle,
+.theme-toggle,
+.nav-menu a,
+.social-link {
+  min-width: 44px;
+  min-height: 44px;
+}
+
+.hero-profile-image {
+  aspect-ratio: 1;
+  width: min(100%, 420px);
+  object-fit: cover;
+  border: 5px solid var(--surface);
+  border-radius: 50%;
+  box-shadow: var(--shadow);
+}
+
+.hero-copy > p:not(.eyebrow):not(.kicker):not(.target-roles) {
+  max-width: var(--text-measure);
+}
+
+.target-roles {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 8px 14px;
+  border: 1px solid var(--stroke);
+  border-radius: 999px;
+}
+
+@media (max-width: 560px) {
+  .container { width: min(100% - 32px, var(--page-width)); }
+  .hero-profile-image { width: min(82vw, 340px); margin-inline: auto; }
+}
+
 /* ---------- Reduced motion ---------- */
 @media (prefers-reduced-motion: reduce) {
   *,

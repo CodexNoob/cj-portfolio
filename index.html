@@ -8,11 +8,10 @@
   <script>(function(){try{var t=localStorage.getItem("theme");if(t!=="light"&&t!=="dark"){t=window.matchMedia&&matchMedia("(prefers-color-scheme: light)").matches?"light":"dark"}document.documentElement.setAttribute("data-theme",t)}catch(e){}})();</script>
   <title>Charles John Duot - Full-Stack Web Developer Portfolio</title>
   <meta name="description"
-    content="Portfolio of Charles John Duot, an AI-assisted full-stack web developer building SaaS platforms, dashboards, and business websites with Next.js, React, TypeScript, Tailwind CSS, Supabase, and PostgreSQL." />
+    content="Portfolio of Charles John Duot, a full-stack web developer building SaaS platforms, dashboards, and business websites with Next.js, React, TypeScript, Tailwind CSS, Supabase, and PostgreSQL." />
   <meta name="author" content="Charles John Duot" />
 
-  <!-- TODO: replace with the real deployed URL (used by canonical + social share cards) -->
-  <link rel="canonical" href="https://charlesjohnduot.netlify.app/" />
+  <link rel="canonical" href="__SITE_URL__/" />
 
   <!-- Icons -->
   <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
@@ -25,17 +24,17 @@
   <meta property="og:site_name" content="Charles John Duot" />
   <meta property="og:title" content="Charles John Duot - Full-Stack Web Developer" />
   <meta property="og:description"
-    content="AI-assisted full-stack web developer building SaaS platforms, dashboards, and business websites with Next.js, React, TypeScript, Tailwind CSS, Supabase, and PostgreSQL." />
-  <meta property="og:url" content="https://charlesjohnduot.netlify.app/" />
-  <meta property="og:image" content="https://charlesjohnduot.netlify.app/og-image.png" />
+    content="Full-stack web developer building SaaS platforms, dashboards, and business websites with Next.js, React, TypeScript, Tailwind CSS, Supabase, and PostgreSQL." />
+  <meta property="og:url" content="__SITE_URL__/" />
+  <meta property="og:image" content="__SITE_URL__/og-image.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
-  <meta property="og:image:alt" content="Charles John Duot - AI-Assisted Full-Stack Web Developer" />
+  <meta property="og:image:alt" content="Charles John Duot - Full-Stack Web Developer" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Charles John Duot - Full-Stack Web Developer" />
   <meta name="twitter:description"
-    content="AI-assisted full-stack web developer building SaaS platforms, dashboards, and business websites with Next.js, React, TypeScript, Supabase, and PostgreSQL." />
-  <meta name="twitter:image" content="https://charlesjohnduot.netlify.app/og-image.png" />
+    content="Full-stack web developer building SaaS platforms, dashboards, and business websites with Next.js, React, TypeScript, Supabase, and PostgreSQL." />
+  <meta name="twitter:image" content="__SITE_URL__/og-image.png" />
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/devicon.min.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -49,8 +48,8 @@
     "@context": "https://schema.org",
     "@type": "Person",
     "name": "Charles John Duot",
-    "url": "https://charlesjohnduot.netlify.app/",
-    "image": "https://charlesjohnduot.netlify.app/og-image.png",
+    "url": "__SITE_URL__/",
+    "image": "__SITE_URL__/og-image.png",
     "jobTitle": "Full-Stack Web Developer",
     "email": "mailto:charlesjohnduot@gmail.com",
     "address": { "@type": "PostalAddress", "addressLocality": "Rodriguez", "addressRegion": "Rizal", "addressCountry": "PH" },
@@ -68,6 +67,12 @@
 </head>
 
 <body>
+  <!--
+    TODO: Add verified outcome metrics to each case study.
+    TODO: Confirm the Personal CRM technology stack.
+    TODO: Add CompTIA A+ Core 2 status.
+    TODO: Add a verified testimonial quote and attribution before displaying the testimonial section.
+  -->
   <a class="skip-link" href="#main">Skip to content</a>
 
   <!-- Popup Notification -->
@@ -111,7 +116,7 @@
           </g>
         </svg>
         <span class="logo-type">
-          <span class="logo-text">Charles</span>
+          <span class="logo-text">Charles John Duot</span>
           <span class="logo-tag">Full-Stack Developer</span>
         </span>
       </a>
@@ -124,8 +129,8 @@
         <a href="#skills">Skills & Tools</a>
         <a href="#projects">Projects</a>
         <a href="#experience">Experience</a>
-        <a href="#education">Education & Certifications</a>
         <a href="#contact">Contact</a>
+        <a href="assets/Charles_John_Duot_Resume.pdf" target="_blank" rel="noopener">Resume</a>
         <button class="theme-toggle" aria-label="Switch to light mode" title="Switch to light mode" type="button">
           <i class="fas fa-sun" aria-hidden="true"></i>
         </button>
@@ -136,7 +141,6 @@
   <main id="main">
     <!-- Hero -->
     <section class="hero section" id="home">
-      <canvas class="hero-three" aria-hidden="true"></canvas>
       <div class="container grid-2">
         <div class="hero-copy reveal-on-scroll">
           <p class="eyebrow">Full-stack developer - SaaS, dashboards, and business systems</p>
@@ -147,34 +151,25 @@
           </p>
           <p>
             I build responsive SaaS applications, operational dashboards, and business websites with Next.js, React,
-            TypeScript, Tailwind CSS, and Supabase/PostgreSQL. Currently developing Event Core, a multi-module hall and
-            event management platform for a New York-based client.
+            TypeScript, Tailwind CSS, and Supabase/PostgreSQL. I am developing Event Core, a multi-module hall and event
+            management platform for a New York-based client; its live demo is available.
           </p>
           <div class="cta">
             <a class="btn primary" href="#projects">View Projects</a>
             <a class="btn ghost" href="#contact">Contact Me</a>
-            <button id="view-resume-btn" class="btn ghost" type="button" aria-haspopup="dialog"
-              aria-controls="resume-modal">
-              <i class="fas fa-eye"></i>
-              <span>View Resume</span>
-            </button>
           </div>
           <div class="stats">
             <div class="stat">
-              <span class="value">1</span>
-              <span class="label">SaaS Platform in Production</span>
+              <span class="value">Live</span>
+              <span class="label">Event Core with a New York client</span>
             </div>
             <div class="stat">
               <span class="value">12+</span>
               <span class="label">Modules Shipped</span>
             </div>
-            <div class="stat">
-              <span class="value">1.5</span>
-              <span class="label">BSIT GWA (2025)</span>
-            </div>
           </div>
           <p class="muted target-roles">
-            Open to: Full-Stack Web Developer / Frontend Developer / Next.js Developer / Website Developer
+            Open to Full-Stack / Next.js roles
           </p>
         </div>
         <div class="hero-art reveal-on-scroll delay-1">
@@ -400,7 +395,7 @@
           </article>
           <article class="card project-card">
             <div class="project-preview">
-              <img src="assets/images/personal-crm-card.svg" alt="Personal CRM dashboard for a tax and accounting firm" loading="lazy" decoding="async">
+              <img src="assets/images/personal-crm-dashboard.png" alt="Personal CRM dashboard with client tasks and pipeline overview" loading="lazy" decoding="async">
             </div>
             <h3>Personal CRM</h3>
             <p>A practice management CRM for tax and accounting firms, bringing clients, leads, engagements, tasks, documents, secure messaging, e-signatures, a client portal, and billing together.</p>
@@ -448,6 +443,18 @@
     </section>
 
     <!-- Experience -->
+    <section class="section" id="how-i-work">
+      <div class="container reveal-on-scroll">
+        <h2>How I work</h2>
+        <ol class="plain-list">
+          <li><strong>Understand requirements:</strong> Clarify the product needs and user flows.</li>
+          <li><strong>Build:</strong> Develop responsive interfaces and database-backed workflows.</li>
+          <li><strong>Test:</strong> Use Playwright to check the experience.</li>
+          <li><strong>Deliver and iterate:</strong> Deploy and refine based on feedback.</li>
+        </ol>
+      </div>
+    </section>
+
     <section class="section" id="experience">
       <div class="container reveal-on-scroll">
         <h2>Experience</h2>
@@ -531,7 +538,7 @@
         <h2>Education & Certifications</h2>
         <div class="timeline">
           <div class="timeline-item">
-            <span class="time">July 2025<br>GWA 1.5</span>
+            <span class="time">July 2025<br>GWA 1.5<br>Philippine scale, 1.0 = highest</span>
             <div class="content">
               <h3>Bachelor of Science in Information Technology (BSIT)</h3>
               <p class="timeline-meta">Colegio de Montalban &middot; Rodriguez, Rizal, Philippines</p>
@@ -573,6 +580,11 @@
     </section>
 
     <!-- Contact -->
+    <!-- TODO: Add a verified testimonial quote and its attribution before rendering this section. -->
+    <section class="section" id="testimonials" hidden aria-hidden="true">
+      <div class="container"><h2>Testimonial</h2></div>
+    </section>
+
     <section class="section" id="contact">
       <div class="container reveal-on-scroll">
         <h2>Contact</h2>
@@ -602,6 +614,8 @@
                 <span>+63 919 762 1060</span>
               </a>
             </div>
+            <button class="btn ghost" id="copy-email" type="button">Copy email</button>
+            <p class="form-status" id="copy-email-status" role="status" aria-live="polite"></p>
             <div class="social-links">
               <a href="https://github.com/CodexNoob" target="_blank" rel="noopener noreferrer"
                 aria-label="GitHub" class="social-link">
@@ -611,27 +625,16 @@
                 rel="noopener noreferrer" aria-label="LinkedIn" class="social-link">
                 <i class="fab fa-linkedin-in"></i>
               </a>
-              <a href="https://www.facebook.com/charlesjhon.duot" target="_blank" rel="noopener noreferrer"
-                aria-label="Facebook" class="social-link">
-                <i class="fab fa-facebook-f"></i>
-              </a>
               <a href="https://wa.me/639197621060?text=Hi%20Charles!%20I%20saw%20your%20portfolio%20and%20wanted%20to%20connect."
                 target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" class="social-link">
                 <i class="fab fa-whatsapp"></i>
-              </a>
-              <a href="https://www.instagram.com/charlesjohnduot/" target="_blank" rel="noopener noreferrer"
-                aria-label="Instagram" class="social-link">
-                <i class="fab fa-instagram"></i>
-              </a>
-              <a href="https://www.tiktok.com/@c_jo.hn?is_from_webapp=1&sender_device=pc" target="_blank"
-                rel="noopener noreferrer" aria-label="TikTok" class="social-link">
-                <i class="fab fa-tiktok"></i>
               </a>
             </div>
           </div>
           <div class="contact-form-container">
             <h3>Send Me a Message</h3>
             <form id="contactForm" class="contact-form" action="https://formspree.io/f/xldpbaga" method="POST">
+              <div hidden aria-hidden="true"><label for="contact-website">Leave this empty</label><input id="contact-website" name="_gotcha" tabindex="-1" autocomplete="off"></div>
               <div id="form-status" class="form-status contact-form-status">
               </div>
               <div class="form-group">
@@ -792,7 +795,7 @@
 
   <footer class="site-footer">
     <div class="container">
-      <p>&copy; <span id="year"></span> CJ Duot</p>
+      <p>&copy; <span id="year"></span> Charles John Duot</p>
     </div>
   </footer>
 
